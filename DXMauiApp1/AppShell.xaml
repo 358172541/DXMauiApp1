@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:DXMauiApp1.Pages"
+       x:Class= "DXMauiApp1.AppShell"
+       Style="{StaticResource ShellStyle}">
+    
+    <ShellContent
+            ContentTemplate="{DataTemplate pages:LoginPage}"
+            Icon="grid"
+            Route="LoginPage"
+            Title="LoginPage" />
+
+    <TabBar>
+        <ShellContent
+            ContentTemplate="{DataTemplate pages:ContactPage}"
+            Icon="xamarin"
+            Route="ContactPage"
+            Title="ContactPage" />
+
+        <ShellContent
+            ContentTemplate="{DataTemplate pages:EmptyPage}"
+            Icon="xamarin"
+            Route="EmptyPage"
+            Title="EmptyPage" />
+    </TabBar>
+</Shell>
