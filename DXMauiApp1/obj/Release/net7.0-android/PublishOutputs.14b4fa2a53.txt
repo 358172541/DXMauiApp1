@@ -1,0 +1,3 @@
+C:\Users\admin\Desktop\DXMauiApp1\DXMauiApp1\bin\Release\net7.0-android\publish\com.companyname.DXMauiApp1-Signed.aab
+C:\Users\admin\Desktop\DXMauiApp1\DXMauiApp1\bin\Release\net7.0-android\publish\com.companyname.DXMauiApp1.aab
+C:\Users\admin\Desktop\DXMauiApp1\DXMauiApp1\bin\Release\net7.0-android\publish\com.companyname.DXMauiApp1-Signed.apk
