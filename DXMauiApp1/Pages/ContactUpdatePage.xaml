@@ -4,7 +4,27 @@
              x:Class= "DXMauiApp1.Pages.ContactUpdatePage"
              Title="ContactUpdatePage">
     <ContentPage.Content>
-        <Label
-            Text=" " />
+        <VerticalStackLayout Margin="24"
+                         Spacing="24">
+
+            <Button 
+                x:Name="ButtonSubmit"
+                Clicked="ButtonSubmit_Clicked"
+                CornerRadius="0"
+                FontSize="18"
+                HeightRequest="56"
+                Style="{StaticResource PrimaryButton}"
+                Text="匚匚匚匚" />
+
+            <Button 
+                x:Name="ButtonCancel"
+                Clicked="ButtonCancel_Clicked"
+                CornerRadius="0"
+                FontSize="18"
+                HeightRequest="56"
+                Style="{StaticResource PrimaryButton}"
+                Text="匚匚" />
+            
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
