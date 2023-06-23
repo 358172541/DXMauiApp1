@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class= "DXMauiApp1.Pages.ContactCreatePage"
+             Title="ContactCreatePage">
+    <ContentPage.Content>
+        <VerticalStackLayout 
+            Margin="24"
+            Spacing="24">
+
+            <dxe:TextEdit 
+                x:Name="TextEditName"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                CornerRadius="0"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="匚匚匚匚"
+                Margin="0,-10,0,-14"
+                TextChanged="TextEditName_TextChanged"
+                TextFontSize="17" />
+
+            <dxe:TextEdit 
+                x:Name="TextEditNumber"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                CornerRadius="0"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="匚匚匚匚"
+                Margin="0,-10,0,-14"
+                TextChanged="TextEditNumber_TextChanged"
+                TextFontSize="17" />
+
+            <Button 
+                x:Name="ButtonSubmit"
+                Clicked="ButtonSubmit_Clicked"
+                CornerRadius="0"
+                FontSize="17"
+                HeightRequest="56"
+                Style="{StaticResource PrimaryButton}"
+                Text="匚匚匚匚" />
+
+            <Button 
+                x:Name="ButtonCancel"
+                Clicked="ButtonCancel_Clicked"
+                CornerRadius="0"
+                FontSize="17"
+                HeightRequest="56"
+                Style="{StaticResource PrimaryButton}"
+                Text="匚匚" />
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

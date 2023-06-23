@@ -11,13 +11,13 @@
     <MauiXaml Update="App.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\ContactUpdatePage.xaml">
+    <MauiXaml Update="Pages\Contact\ContactUpdatePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\ContactPage.xaml">
+    <MauiXaml Update="Pages\Contact\ContactPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\ContactCreatePage.xaml">
+    <MauiXaml Update="Pages\Contact\ContactCreatePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\EmptyPage.xaml">
