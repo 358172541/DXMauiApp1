@@ -36,18 +36,18 @@ namespace DXMauiApp1.Services
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
         }
 
-        public static async Task CreateAsync(ContactModel model)
+        public static async Task CreateAsync(ContactCreateModel createModel)
         {
             var httpClient = CreateHttpClient();
 
-            var httpContent = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
+            var httpContent = new StringContent(JsonSerializer.Serialize(createModel), Encoding.UTF8, "application/json");
 
             var httpResponseMessage = await httpClient.PostAsync("api/mac/contact", httpContent);
 
             httpResponseMessage.EnsureSuccessStatusCode();
         }
 
-        public static async Task<ContactModel> UpdateSearchAsync(long id)
+        public static async Task<ContactUpdateModel> UpdateSearchAsync(long id)
         {
             var httpClient = CreateHttpClient();
 
@@ -55,18 +55,18 @@ namespace DXMauiApp1.Services
 
             httpResponseMessage.EnsureSuccessStatusCode();
 
-            return JsonSerializer.Deserialize<ContactModel>(
+            return JsonSerializer.Deserialize<ContactUpdateModel>(
                 await httpResponseMessage.Content.ReadAsStringAsync(),
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
         }
 
-        public static async Task UpdateAsync(ContactModel model)
+        public static async Task UpdateAsync(ContactUpdateModel updateModel)
         {
             var httpClient = CreateHttpClient();
 
-            var httpContent = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
+            var httpContent = new StringContent(JsonSerializer.Serialize(updateModel), Encoding.UTF8, "application/json");
 
-            var httpResponseMessage = await httpClient.PutAsync("api/mac/contact/" + model.Id, httpContent);
+            var httpResponseMessage = await httpClient.PutAsync("api/mac/contact/" + updateModel.Id, httpContent);
 
             httpResponseMessage.EnsureSuccessStatusCode();
         }

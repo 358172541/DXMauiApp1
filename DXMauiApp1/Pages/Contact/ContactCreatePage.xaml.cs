@@ -34,19 +34,19 @@ namespace DXMauiApp1.Pages
                 Common.TextEditBaseRequired(TextEditNumber))
             {
                 await ContactService.CreateAsync(
-                new ContactModel
-                {
-                    Name = TextEditName.Text,
-                    Number = TextEditNumber.Text
-                });
+                    new ContactCreateModel
+                    {
+                        Name = TextEditName.Text,
+                        Number = TextEditNumber.Text
+                    });
 
-                await Shell.Current.GoToAsync("..");
+                await Shell.Current.GoToAsync("..", true);
             }
         }
 
         private async void ButtonCancel_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("..", true);
         }
     }
 }

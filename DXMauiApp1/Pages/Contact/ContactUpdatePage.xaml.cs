@@ -40,22 +40,21 @@ namespace DXMauiApp1.Pages
             if (Common.TextEditBaseRequired(TextEditName) &&
                 Common.TextEditBaseRequired(TextEditNumber))
             {
-                var item = new ContactModel
-                {
-                    Id = ItemId,
-                    Name = TextEditName.Text,
-                    Number = TextEditNumber.Text
-                };
+                await ContactService.UpdateAsync(
+                    new ContactUpdateModel
+                    {
+                        Id = ItemId,
+                        Name = TextEditName.Text,
+                        Number = TextEditNumber.Text
+                    });
 
-                await ContactService.UpdateAsync(item);
-
-                await Shell.Current.GoToAsync("..");
+                await Shell.Current.GoToAsync("..", true);
             }
         }
 
         private async void ButtonCancel_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("..", true);
         }
     }
 }

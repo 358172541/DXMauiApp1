@@ -22,14 +22,14 @@ namespace DXMauiApp1.Pages
 
         private async void ButtonCreate_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync(nameof(ContactCreatePage));
+            await Shell.Current.GoToAsync(nameof(ContactCreatePage), true);
         }
 
         private async void DXCollectionViewContact_Tap(object sender, DevExpress.Maui.CollectionView.CollectionViewGestureEventArgs e)
         {
             var item = DXCollectionViewContact.SelectedItem as ContactModel;
 
-            await Shell.Current.GoToAsync(nameof(ContactUpdatePage) + "?id=" + item.Id);
+            await Shell.Current.GoToAsync(nameof(ContactUpdatePage) + "?id=" + item.Id, true);
         }
     }
 }
