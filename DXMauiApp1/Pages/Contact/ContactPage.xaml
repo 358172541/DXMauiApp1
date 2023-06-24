@@ -27,18 +27,21 @@
                         <Label
                             HorizontalTextAlignment="Center"
                             Text="匚"
-                            WidthRequest="42" />
+                            WidthRequest="50" />
                         <Label
                             Text="：" />
                         <Label
                             Text="0.00" />
                         <!--binding-->
-                        <Label Text=" KG" />
-                        <Label Text=" / " />
+                        <Label 
+                            Text=" KG" />
+                        <Label 
+                            Text=" / " />
                         <Label
                             Text="0.0000" />
                         <!--binding-->
-                        <Label Text=" M³" />
+                        <Label 
+                            Text=" M³" />
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout
@@ -47,20 +50,23 @@
                         <Label
                             HorizontalTextAlignment="Center"
                             Text="匚匚匚"
-                            WidthRequest="42" />
+                            WidthRequest="50" />
                         <Label
                             Text="：" />
                         <Label
                             Text="0.00"
                             TextColor="Olive" />
                         <!--binding-->
-                        <Label Text=" KG" />
-                        <Label Text=" / " />
+                        <Label 
+                            Text=" KG" />
+                        <Label 
+                            Text=" / " />
                         <Label
                             Text="0.0000"
                             TextColor="Olive" />
                         <!--binding-->
-                        <Label Text=" M³" />
+                        <Label 
+                            Text=" M³" />
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout
@@ -69,20 +75,23 @@
                         <Label
                             HorizontalTextAlignment="Center"
                             Text="匚匚匚"
-                            WidthRequest="42" />
+                            WidthRequest="50" />
                         <Label
                             Text="：" />
                         <Label
                             Text="0.00"
                             TextColor="Crimson" />
                         <!--binding-->
-                        <Label Text=" KG" />
-                        <Label Text=" / " />
+                        <Label 
+                            Text=" KG" />
+                        <Label 
+                            Text=" / " />
                         <Label
                             Text="0.0000"
                             TextColor="Crimson" />
                         <!--binding-->
-                        <Label Text=" M³" />
+                        <Label 
+                            Text=" M³" />
                     </HorizontalStackLayout>
 
                     <Button

@@ -12,6 +12,11 @@
             <Color x:Key="NormalLightText">#959aa0</Color>
             <Color x:Key="TitleTextColor">White</Color>
             <Color x:Key="NormalBackgroundColor">White</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="17" />
+            </Style>
+            
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}"/>
                 <Setter Property="BarTextColor" Value="White"/>
