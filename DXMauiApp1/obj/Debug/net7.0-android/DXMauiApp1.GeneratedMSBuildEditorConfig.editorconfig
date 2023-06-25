@@ -12,45 +12,45 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = DXMauiApp1
-build_property.ProjectDir = C:\Users\ME\Desktop\DXMauiApp1\DXMauiApp1\
+build_property.ProjectDir = C:\Users\admin\Desktop\DXMauiApp1\DXMauiApp1\
 
-[C:/Users/ME/Desktop/DXMauiApp1/DXMauiApp1/App.xaml]
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/ME/Desktop/DXMauiApp1/DXMauiApp1/AppShell.xaml]
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/ME/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactCreatePage.xaml]
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactCreatePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Contact.ContactCreatePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Contact\ContactCreatePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Contact\ContactCreatePage.xaml
 
-[C:/Users/ME/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactPage.xaml]
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Contact.ContactPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Contact\ContactPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Contact\ContactPage.xaml
 
-[C:/Users/ME/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactUpdatePage.xaml]
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactUpdatePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Contact.ContactUpdatePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Contact\ContactUpdatePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Contact\ContactUpdatePage.xaml
 
-[C:/Users/ME/Desktop/DXMauiApp1/DXMauiApp1/Pages/EmptyPage.xaml]
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/EmptyPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.EmptyPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\EmptyPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\EmptyPage.xaml
 
-[C:/Users/ME/Desktop/DXMauiApp1/DXMauiApp1/Pages/LoginPage.xaml]
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
