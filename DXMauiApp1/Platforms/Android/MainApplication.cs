@@ -10,6 +10,6 @@ namespace DXMauiApp1
             : base(handle, ownership)
         {
         }
-        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+        protected override MauiApp CreateMauiApp() => Program.CreateMauiApp();
     }
 }
