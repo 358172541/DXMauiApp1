@@ -1,3 +1,6 @@
+using DXMauiApp1.Models;
+using DXMauiApp1.Services;
+
 namespace DXMauiApp1.Pages
 {
     public partial class LoginPage : ContentPage
@@ -30,9 +33,20 @@ namespace DXMauiApp1.Pages
             if (Common.TextEditBaseRequired(TextEditAccount) &&
                 Common.TextEditBaseRequired(PasswordEditPassword))
             {
-                await DisplayAlert("ьньньньн", "ьньньньньньньньн", "ьньн");
+                var tuple = await AdminService.LoginAsync(
+                    new AdminLoginModel
+                    {
+                        Account = TextEditAccount.Text,
+                        Password = PasswordEditPassword.Text
+                    });
 
-                Preferences.Set("AccessToken", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MTU1NjI5MzQzNTgwMjEiLCJpc3MiOiJpc3NtYWMiLCJhdWQiOiJhdWQifQ.ESzy8sTofOTo9_lF97AGiYFI5pMF3dJrRUD4Vx7Pzyc");
+                if (tuple.Item2 != null)
+                {
+                    await DisplayAlert("ьньньньн", tuple.Item2.Text + "║╦" + tuple.Item2.Code + "║╧", "ьньн");
+                    return;
+                }
+
+                Preferences.Set("AccessToken", tuple.Item1.AccessToken);
 
                 await Shell.Current.GoToAsync("///" + nameof(ContactPage), true);
             }

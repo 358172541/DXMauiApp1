@@ -33,12 +33,18 @@ namespace DXMauiApp1.Pages
             if (Common.TextEditBaseRequired(TextEditName) &&
                 Common.TextEditBaseRequired(TextEditNumber))
             {
-                await ContactService.CreateAsync(
+                var tuple = await ContactService.CreateAsync(
                     new ContactCreateModel
                     {
                         Name = TextEditName.Text,
                         Number = TextEditNumber.Text
                     });
+
+                if (tuple.Item2 != null)
+                {
+                    await DisplayAlert("匚匚匚匚", tuple.Item2.Text + "「" + tuple.Item2.Code + "」", "匚匚");
+                    return;
+                }
 
                 await Shell.Current.GoToAsync("..", true);
             }

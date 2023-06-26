@@ -23,20 +23,16 @@ namespace DXMauiApp1.Services
             return httpClient;
         }
 
-        public static async Task<PagedModel<ContactModel>> SearchAsync()
+        public static async Task<Tuple<PagedModel<ContactModel>, ErrorModel>> SearchAsync()
         {
             var httpClient = CreateHttpClient();
 
             var httpResponseMessage = await httpClient.GetAsync("api/mac/contact");
 
-            httpResponseMessage.EnsureSuccessStatusCode();
-
-            return JsonSerializer.Deserialize<PagedModel<ContactModel>>(
-                await httpResponseMessage.Content.ReadAsStringAsync(),
-                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            return await Common.HttpResponseMessageHandleAsync<PagedModel<ContactModel>, ErrorModel>(httpResponseMessage);
         }
 
-        public static async Task CreateAsync(ContactCreateModel createModel)
+        public static async Task<Tuple<EmptyModel, ErrorModel>> CreateAsync(ContactCreateModel createModel)
         {
             var httpClient = CreateHttpClient();
 
@@ -44,23 +40,19 @@ namespace DXMauiApp1.Services
 
             var httpResponseMessage = await httpClient.PostAsync("api/mac/contact", httpContent);
 
-            httpResponseMessage.EnsureSuccessStatusCode();
+            return await Common.HttpResponseMessageHandleAsync<EmptyModel, ErrorModel>(httpResponseMessage);
         }
 
-        public static async Task<ContactUpdateModel> UpdateSearchAsync(long id)
+        public static async Task<Tuple<ContactUpdateModel, ErrorModel>> UpdateSearchAsync(long id)
         {
             var httpClient = CreateHttpClient();
 
             var httpResponseMessage = await httpClient.GetAsync("api/mac/contact/" + id);
 
-            httpResponseMessage.EnsureSuccessStatusCode();
-
-            return JsonSerializer.Deserialize<ContactUpdateModel>(
-                await httpResponseMessage.Content.ReadAsStringAsync(),
-                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            return await Common.HttpResponseMessageHandleAsync<ContactUpdateModel, ErrorModel>(httpResponseMessage);
         }
 
-        public static async Task UpdateAsync(ContactUpdateModel updateModel)
+        public static async Task<Tuple<EmptyModel, ErrorModel>> UpdateAsync(ContactUpdateModel updateModel)
         {
             var httpClient = CreateHttpClient();
 
@@ -68,7 +60,7 @@ namespace DXMauiApp1.Services
 
             var httpResponseMessage = await httpClient.PutAsync("api/mac/contact/" + updateModel.Id, httpContent);
 
-            httpResponseMessage.EnsureSuccessStatusCode();
+            return await Common.HttpResponseMessageHandleAsync<EmptyModel, ErrorModel>(httpResponseMessage);
         }
     }
 }

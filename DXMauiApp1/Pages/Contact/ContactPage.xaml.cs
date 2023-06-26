@@ -15,8 +15,15 @@ namespace DXMauiApp1.Pages
             base.OnAppearing();
 
             {
-                var items = (await ContactService.SearchAsync()).Items;
-                DXCollectionViewContact.ItemsSource = items; // new ObservableCollection<ContactModel>(items); // load
+                var tuple = await ContactService.SearchAsync();
+
+                if (tuple.Item2 != null)
+                {
+                    await DisplayAlert("匚匚匚匚", tuple.Item2.Text + "「" + tuple.Item2.Code + "」", "匚匚");
+                    return; // todo
+                }
+
+                DXCollectionViewContact.ItemsSource = tuple.Item1?.Items; // new ObservableCollection<ContactModel>(items); // load
             }
         }
 

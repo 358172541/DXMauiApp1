@@ -23,21 +23,15 @@ namespace DXMauiApp1.Services
             return httpClient;
         }
 
-        public static async Task<TokenModel> LoginAsync(AdminLoginModel loginModel)
+        public static async Task<Tuple<TokenModel, ErrorModel>> LoginAsync(AdminLoginModel loginModel)
         {
             var httpClient = CreateHttpClient();
 
             var httpContent = new StringContent(JsonSerializer.Serialize(loginModel), Encoding.UTF8, "application/json");
 
-            var httpResponseMessage = await httpClient.PostAsync("api/mac/contact", httpContent);
+            var httpResponseMessage = await httpClient.PostAsync("api/mac/admin/login", httpContent); // handle exception
 
-            httpResponseMessage.EnsureSuccessStatusCode();
-
-            // if(httpResponseMessage.IsSuccessStatusCode) // todo
-
-            return JsonSerializer.Deserialize<TokenModel>(
-                await httpResponseMessage.Content.ReadAsStringAsync(),
-                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            return await Common.HttpResponseMessageHandleAsync<TokenModel, ErrorModel>(httpResponseMessage);
         }
     }
 }

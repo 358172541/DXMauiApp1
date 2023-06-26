@@ -1,13 +1,15 @@
 ﻿using DevExpress.Maui.Editors;
 using System.Collections;
+using System.Net;
 using System.Reflection;
+using System.Text.Json;
 
 namespace DXMauiApp1
 {
     public static class Common
     {
         public static bool TextEditBaseRequired(
-            TextEditBase textEditBase, 
+            TextEditBase textEditBase,
             string errorText = "匚匚匚匚匚匚匚")
         {
             if (string.IsNullOrEmpty(textEditBase.Text))
@@ -24,7 +26,7 @@ namespace DXMauiApp1
             }
         }
 
-        public static string QueryStringify<T>(T t) // experimental method
+        public static string QueryStringify<T>(T t) // experimental
         {
             var properties = typeof(T)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -57,6 +59,31 @@ namespace DXMauiApp1
             }
 
             return string.Join("&", items);
+        }
+
+        public static async Task<Tuple<TItem1, TItem2>> HttpResponseMessageHandleAsync<TItem1, TItem2>(
+            HttpResponseMessage httpResponseMessage)
+            where TItem1 : class
+            where TItem2 : class // experimental
+        {
+            var item1 = default(TItem1);
+            var item2 = default(TItem2);
+
+            if (httpResponseMessage.IsSuccessStatusCode)
+            {
+                if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
+                    item1 = JsonSerializer.Deserialize<TItem1>(
+                        await httpResponseMessage.Content.ReadAsStringAsync(),
+                        new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            }
+            else
+            {
+                item2 = JsonSerializer.Deserialize<TItem2>(
+                    await httpResponseMessage.Content.ReadAsStringAsync(),
+                    new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            }
+
+            return Tuple.Create(item1, item2);
         }
     }
 }

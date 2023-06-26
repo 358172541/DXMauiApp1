@@ -1,5 +1,6 @@
 ﻿using DXMauiApp1.Models;
 using DXMauiApp1.Services;
+using System;
 
 namespace DXMauiApp1.Pages
 {
@@ -17,9 +18,16 @@ namespace DXMauiApp1.Pages
         {
             base.OnAppearing();
 
-            var item = await ContactService.UpdateSearchAsync(ItemId);
-            TextEditName.Text = item?.Name;
-            TextEditNumber.Text = item?.Number;
+            var tuple = await ContactService.UpdateSearchAsync(ItemId);
+
+            if (tuple.Item2 != null)
+            {
+                await DisplayAlert("匚匚匚匚", tuple.Item2.Text + "「" + tuple.Item2.Code + "」", "匚匚");
+                return; // todo
+            }
+
+            TextEditName.Text = tuple.Item1?.Name;
+            TextEditNumber.Text = tuple.Item1?.Number;
 
             Common.TextEditBaseRequired(TextEditName);
             Common.TextEditBaseRequired(TextEditNumber);
@@ -40,13 +48,19 @@ namespace DXMauiApp1.Pages
             if (Common.TextEditBaseRequired(TextEditName) &&
                 Common.TextEditBaseRequired(TextEditNumber))
             {
-                await ContactService.UpdateAsync(
+                var tuple = await ContactService.UpdateAsync(
                     new ContactUpdateModel
                     {
                         Id = ItemId,
                         Name = TextEditName.Text,
                         Number = TextEditNumber.Text
                     });
+
+                if (tuple.Item2 != null)
+                {
+                    await DisplayAlert("匚匚匚匚", tuple.Item2.Text + "「" + tuple.Item2.Code + "」", "匚匚");
+                    return;
+                }
 
                 await Shell.Current.GoToAsync("..", true);
             }
