@@ -1,4 +1,5 @@
-﻿using DevExpress.Maui;
+﻿using CommunityToolkit.Maui;
+using DevExpress.Maui;
 
 namespace DXMauiApp1
 {
@@ -9,6 +10,7 @@ namespace DXMauiApp1
             var budr = MauiApp.CreateBuilder();
 
             budr.UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .UseDevExpress();
 
             DevExpress.Maui.Charts.Initializer.Init();

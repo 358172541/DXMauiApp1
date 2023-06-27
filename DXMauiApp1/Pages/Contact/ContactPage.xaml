@@ -4,146 +4,144 @@
              xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
              x:Class= "DXMauiApp1.Pages.ContactPage"
              Title="ContactPage">
-    <ContentPage.Content>
+    <ScrollView>
+        <VerticalStackLayout>
 
-        <ScrollView>
-            <VerticalStackLayout>
+            <Grid Margin="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-                <Grid Margin="24">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-
-                    <HorizontalStackLayout
+                <HorizontalStackLayout
                         Grid.Column="0"
                         Grid.Row="0">
-                        <Label
+                    <Label
                             HorizontalTextAlignment="Center"
                             Text="匚"
                             WidthRequest="50" />
-                        <Label
+                    <Label
                             Text="：" />
-                        <Label
+                    <Label
                             Text="0.00" />
-                        <!--binding-->
-                        <Label 
+                    <!--binding-->
+                    <Label 
                             Text=" KG" />
-                        <Label 
+                    <Label 
                             Text=" / " />
-                        <Label
+                    <Label
                             Text="0.0000" />
-                        <!--binding-->
-                        <Label 
+                    <!--binding-->
+                    <Label 
                             Text=" M³" />
-                    </HorizontalStackLayout>
+                </HorizontalStackLayout>
 
-                    <HorizontalStackLayout
+                <HorizontalStackLayout
                         Grid.Column="0"
                         Grid.Row="1">
-                        <Label
+                    <Label
                             HorizontalTextAlignment="Center"
                             Text="匚匚匚"
                             WidthRequest="50" />
-                        <Label
+                    <Label
                             Text="：" />
-                        <Label
+                    <Label
                             Text="0.00"
                             TextColor="Olive" />
-                        <!--binding-->
-                        <Label 
+                    <!--binding-->
+                    <Label 
                             Text=" KG" />
-                        <Label 
+                    <Label 
                             Text=" / " />
-                        <Label
+                    <Label
                             Text="0.0000"
                             TextColor="Olive" />
-                        <!--binding-->
-                        <Label 
+                    <!--binding-->
+                    <Label 
                             Text=" M³" />
-                    </HorizontalStackLayout>
+                </HorizontalStackLayout>
 
-                    <HorizontalStackLayout
+                <HorizontalStackLayout
                         Grid.Column="0"
                         Grid.Row="2">
-                        <Label
+                    <Label
                             HorizontalTextAlignment="Center"
                             Text="匚匚匚"
                             WidthRequest="50" />
-                        <Label
+                    <Label
                             Text="：" />
-                        <Label
+                    <Label
                             Text="0.00"
                             TextColor="Crimson" />
-                        <!--binding-->
-                        <Label 
+                    <!--binding-->
+                    <Label 
                             Text=" KG" />
-                        <Label 
+                    <Label 
                             Text=" / " />
-                        <Label
+                    <Label
                             Text="0.0000"
                             TextColor="Crimson" />
-                        <!--binding-->
-                        <Label 
+                    <!--binding-->
+                    <Label 
                             Text=" M³" />
-                    </HorizontalStackLayout>
+                </HorizontalStackLayout>
 
-                    <Button
-                        x:Name="ButtonCreate"
-                        Clicked="ButtonCreate_Clicked"
-                        Grid.Column="1"
-                        Grid.Row="0"
-                        Grid.RowSpan="3"
-                        Padding="13,0"
-                        Text="匚匚"></Button>
-                </Grid>
+                <Button
+                    x:Name="ButtonCreate"
+                    Clicked="ButtonCreate_Clicked"
+                    FontSize="17"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Padding="13,0"
+                    Text="匚匚"></Button>
+            </Grid>
 
-                <dxcv:DXCollectionView
+            <dxcv:DXCollectionView
                     x:Name="DXCollectionViewContact"
                     SelectionMode="Single"
                     Tap="DXCollectionViewContact_Tap">
-                    <dxcv:DXCollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid 
+                <dxcv:DXCollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid 
                                 Padding="24,8">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*" />
-                                    <RowDefinition Height="1*" />
-                                </Grid.RowDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
 
-                                <Label  
+                            <Label  
                                     Grid.Column="0"
                                     Grid.Row="0" 
                                     Text="{Binding Name}" />
 
-                                <Label 
+                            <Label 
                                     Grid.Column="0" 
                                     Grid.Row="1" 
                                     Text="{Binding Number}" />
 
-                                <Label 
+                            <Label 
                                     Grid.Row="0" 
                                     Grid.RowSpan="2"
                                     Grid.Column="1" 
                                     HorizontalTextAlignment="Center"
                                     Text=">" 
                                     VerticalTextAlignment="Center" />
-                            </Grid>
-                        </DataTemplate>
-                    </dxcv:DXCollectionView.ItemTemplate>
-                </dxcv:DXCollectionView>
-            </VerticalStackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+                        </Grid>
+                    </DataTemplate>
+                </dxcv:DXCollectionView.ItemTemplate>
+            </dxcv:DXCollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

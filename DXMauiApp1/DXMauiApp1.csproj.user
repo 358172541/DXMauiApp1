@@ -20,6 +20,9 @@
     <MauiXaml Update="Pages\Contact\ContactCreatePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\EmptyPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

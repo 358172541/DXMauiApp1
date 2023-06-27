@@ -23,5 +23,11 @@
             Icon="xamarin"
             Route="EmptyPage"
             Title="EmptyPage" />
+
+        <ShellContent
+            ContentTemplate="{DataTemplate pages:HomePage}"
+            Icon="xamarin"
+            Route="HomePage"
+            Title="HomePage" />
     </TabBar>
 </Shell>
