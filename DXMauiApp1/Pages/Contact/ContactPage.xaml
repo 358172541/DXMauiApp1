@@ -9,8 +9,14 @@
 
             <Grid Margin="24">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="50" />
                     <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
@@ -19,86 +25,111 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <HorizontalStackLayout
-                        Grid.Column="0"
-                        Grid.Row="0">
-                    <Label
-                            HorizontalTextAlignment="Center"
-                            Text="匚"
-                            WidthRequest="50" />
-                    <Label
-                            Text="：" />
-                    <Label
-                            Text="0.00" />
-                    <!--binding-->
-                    <Label 
-                            Text=" KG" />
-                    <Label 
-                            Text=" / " />
-                    <Label
-                            Text="0.0000" />
-                    <!--binding-->
-                    <Label 
-                            Text=" M³" />
-                </HorizontalStackLayout>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    HorizontalOptions="Center"
+                    Text="匚" />
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="：" />
+                <Label
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    HorizontalOptions="End"
+                    Text="148.02" />
+                <Label 
+                    Grid.Column="3"
+                    Grid.Row="0"
+                    Text=" KG" />
+                <Label 
+                    Grid.Column="4"
+                    Grid.Row="0"
+                    Text=" / " />
+                <Label
+                    Grid.Column="5"
+                    Grid.Row="0"
+                    HorizontalOptions="End"
+                    Text="242.0002" />
+                <Label 
+                    Grid.Column="6"
+                    Grid.Row="0"
+                    Text=" M³" />
 
-                <HorizontalStackLayout
-                        Grid.Column="0"
-                        Grid.Row="1">
-                    <Label
-                            HorizontalTextAlignment="Center"
-                            Text="匚匚匚"
-                            WidthRequest="50" />
-                    <Label
-                            Text="：" />
-                    <Label
-                            Text="0.00"
-                            TextColor="Olive" />
-                    <!--binding-->
-                    <Label 
-                            Text=" KG" />
-                    <Label 
-                            Text=" / " />
-                    <Label
-                            Text="0.0000"
-                            TextColor="Olive" />
-                    <!--binding-->
-                    <Label 
-                            Text=" M³" />
-                </HorizontalStackLayout>
 
-                <HorizontalStackLayout
-                        Grid.Column="0"
-                        Grid.Row="2">
-                    <Label
-                            HorizontalTextAlignment="Center"
-                            Text="匚匚匚"
-                            WidthRequest="50" />
-                    <Label
-                            Text="：" />
-                    <Label
-                            Text="0.00"
-                            TextColor="Crimson" />
-                    <!--binding-->
-                    <Label 
-                            Text=" KG" />
-                    <Label 
-                            Text=" / " />
-                    <Label
-                            Text="0.0000"
-                            TextColor="Crimson" />
-                    <!--binding-->
-                    <Label 
-                            Text=" M³" />
-                </HorizontalStackLayout>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    Text="匚匚匚" />
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="：" />
+                <Label
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    HorizontalOptions="End"
+                    Text="5.01" />
+                <Label 
+                    Grid.Column="3"
+                    Grid.Row="1"
+                    Text=" KG" />
+                <Label 
+                    Grid.Column="4"
+                    Grid.Row="1"
+                    Text=" / " />
+                <Label
+                    Grid.Column="5"
+                    Grid.Row="1"
+                    HorizontalOptions="End"
+                    Text="67.0001" />
+                <Label 
+                    Grid.Column="6"
+                    Grid.Row="1"
+                    Text=" M³" />
+
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    HorizontalOptions="Center"
+                    Text="匚匚匚" />
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Text="：" />
+                <Label
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    HorizontalOptions="End"
+                    Text="143.01" />
+                <Label 
+                    Grid.Column="3"
+                    Grid.Row="2"
+                    Text=" KG" />
+                <Label 
+                    Grid.Column="4"
+                    Grid.Row="2"
+                    Text=" / " />
+                <Label
+                    Grid.Column="5"
+                    Grid.Row="2"
+                    HorizontalOptions="End"
+                    Text="175.0001" />
+                <Label 
+                    Grid.Column="6"
+                    Grid.Row="2"
+                    Text=" M³" />
 
                 <Button
                     x:Name="ButtonCreate"
                     Clicked="ButtonCreate_Clicked"
                     FontSize="17"
-                    Grid.Column="1"
+                    Grid.Column="7"
                     Grid.Row="0"
                     Grid.RowSpan="3"
+                    HorizontalOptions="End"
                     Padding="13,0"
                     Text="匚匚"></Button>
             </Grid>

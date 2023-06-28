@@ -55,7 +55,7 @@
                         Grid.Row="0"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        Text="75.0001 m³" />
+                        Text="75.0001 M³" />
 
                     <Button 
                         x:Name="ButtonCreate"
@@ -83,11 +83,11 @@
                             SelectionMode="None">
 
                             <dxg:DataGridView.Columns>
-                                <dxg:TextColumn FieldName="L" Caption="匚cm" Width="1*" HorizontalContentAlignment="Center" />
-                                <dxg:TextColumn FieldName="W" Caption="匚cm" Width="1*" HorizontalContentAlignment="Center" />
-                                <dxg:TextColumn FieldName="H" Caption="匚cm" Width="1*" HorizontalContentAlignment="Center" />
-                                <dxg:TextColumn FieldName="V" Caption="匚匚m³" Width="1.5*" HorizontalContentAlignment="Center" />
-                                <dxg:TextColumn FieldName="P" Caption="匚匚" Width="1*" HorizontalContentAlignment="Center" />
+                                <dxg:TextColumn FieldName="L" Caption="匚 CM" Width="12*" HorizontalContentAlignment="Center" />
+                                <dxg:TextColumn FieldName="W" Caption="匚 CM" Width="12*" HorizontalContentAlignment="Center" />
+                                <dxg:TextColumn FieldName="H" Caption="匚 CM" Width="12*" HorizontalContentAlignment="Center" />
+                                <dxg:TextColumn FieldName="V" Caption="匚匚 M³" Width="15*" HorizontalContentAlignment="Center" />
+                                <dxg:TextColumn FieldName="P" Caption="匚匚" Width="12*" HorizontalContentAlignment="Center" />
                             </dxg:DataGridView.Columns>
 
                             <dxg:DataGridView.EndSwipeItems>
