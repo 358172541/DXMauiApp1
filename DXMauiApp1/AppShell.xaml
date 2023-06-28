@@ -19,10 +19,10 @@
             Title="ContactPage" />
 
         <ShellContent
-            ContentTemplate="{DataTemplate pages:EmptyPage}"
+            ContentTemplate="{DataTemplate pages:VoyagePage}"
             Icon="xamarin"
-            Route="EmptyPage"
-            Title="EmptyPage" />
+            Route="VoyagePage"
+            Title="VoyagePage" />
 
         <ShellContent
             ContentTemplate="{DataTemplate pages:HomePage}"
