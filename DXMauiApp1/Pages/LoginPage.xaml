@@ -21,6 +21,7 @@
                 x:Name="TextEditAccount"
                 BoxPadding="18,16"
                 BorderThickness="0.9"
+                ClearIconVisibility="Never"
                 CornerRadius="0"
                 DisabledBorderThickness="0.9"
                 ErrorText=" "
@@ -55,7 +56,6 @@
                 CornerRadius="0"
                 FontSize="17"
                 HeightRequest="56"
-                Style="{StaticResource PrimaryButton}"
                 Text="匚匚匚匚" />
 
         </VerticalStackLayout>

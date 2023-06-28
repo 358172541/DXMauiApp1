@@ -24,13 +24,6 @@ namespace DXMauiApp1.Pages
                     P = 1,
                     V = 75.0001m,
                     W = 101
-                },
-                new SizeModel {
-                    H = 200,
-                    L = 200,
-                    P = 1,
-                    V = 75.0001m,
-                    W = 200
                 }
             };
 

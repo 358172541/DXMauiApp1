@@ -47,7 +47,6 @@
                 CornerRadius="0"
                 FontSize="17"
                 HeightRequest="56"
-                Style="{StaticResource PrimaryButton}"
                 Text="匚匚匚匚" />
 
             <Button 
@@ -56,7 +55,6 @@
                 CornerRadius="0"
                 FontSize="17"
                 HeightRequest="56"
-                Style="{StaticResource PrimaryButton}"
                 Text="匚匚" />
 
         </VerticalStackLayout>
