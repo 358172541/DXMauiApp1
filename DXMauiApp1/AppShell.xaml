@@ -13,21 +13,21 @@
 
     <TabBar>
         <ShellContent
-            ContentTemplate="{DataTemplate pages:ContactPage}"
+            ContentTemplate="{DataTemplate pages:ReceiptMakeupPage}"
             Icon="xamarin"
-            Route="ContactPage"
-            Title="ContactPage" />
+            Route="ReceiptMakeupPage"
+            Title="快递签收" />
+
+        <ShellContent
+            ContentTemplate="{DataTemplate pages:Packag1120UpdatePage}"
+            Icon="xamarin"
+            Route="Packag1120UpdatePage"
+            Title="更新位置" />
 
         <ShellContent
             ContentTemplate="{DataTemplate pages:VoyagePage}"
             Icon="xamarin"
             Route="VoyagePage"
-            Title="VoyagePage" />
-
-        <ShellContent
-            ContentTemplate="{DataTemplate pages:HomePage}"
-            Icon="xamarin"
-            Route="HomePage"
-            Title="HomePage" />
+            Title="船次检测" />
     </TabBar>
 </Shell>

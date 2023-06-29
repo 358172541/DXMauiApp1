@@ -54,7 +54,7 @@
 	  <MauiXaml Update="Pages\Packag1120\Packag1120UpdatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Receipt\ReceiptUpdatePage.xaml">
+	  <MauiXaml Update="Pages\Receipt\ReceiptMakeupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Voyage\VoyagePackagDetectPage.xaml">

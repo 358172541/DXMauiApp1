@@ -48,7 +48,7 @@ namespace DXMauiApp1.Pages
 
                 Preferences.Set("AccessToken", tuple.Item1.AccessToken);
 
-                await Shell.Current.GoToAsync("///" + nameof(ContactPage), true);
+                await Shell.Current.GoToAsync("///" + nameof(ReceiptMakeupPage), true);
             }
         }
     }
