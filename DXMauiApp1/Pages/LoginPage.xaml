@@ -22,7 +22,7 @@
                 BoxPadding="18,16"
                 BorderThickness="0.9"
                 ClearIconVisibility="Never"
-                CornerRadius="0"
+                CornerRadius="8"
                 DisabledBorderThickness="0.9"
                 ErrorText=" "
                 FocusedBorderThickness="0.9"
@@ -38,7 +38,7 @@
                 x:Name="PasswordEditPassword"
                 BoxPadding="18,16"
                 BorderThickness="0.9"
-                CornerRadius="0"
+                CornerRadius="8"
                 DisabledBorderThickness="0.9"
                 ErrorText=" "
                 FocusedBorderThickness="0.9"
@@ -53,7 +53,7 @@
             <Button 
                 x:Name="ButtonLogin"
                 Clicked="ButtonLogin_Clicked"
-                CornerRadius="0"
+                CornerRadius="8"
                 FontSize="17"
                 HeightRequest="56"
                 Text="匚匚匚匚" />

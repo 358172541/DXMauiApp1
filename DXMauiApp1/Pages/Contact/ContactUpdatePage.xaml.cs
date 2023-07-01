@@ -26,8 +26,8 @@ namespace DXMauiApp1.Pages
                 return; // todo
             }
 
-            TextEditName.Text = tuple.Item1?.Name;
-            TextEditNumber.Text = tuple.Item1?.Number;
+            TextEditName.Text = tuple.Item1.Name;
+            TextEditNumber.Text = tuple.Item1.Number;
 
             Common.TextEditBaseRequired(TextEditName);
             Common.TextEditBaseRequired(TextEditNumber);

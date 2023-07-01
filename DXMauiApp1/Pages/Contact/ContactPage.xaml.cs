@@ -23,7 +23,7 @@ namespace DXMauiApp1.Pages
                     return; // todo
                 }
 
-                DXCollectionViewContact.ItemsSource = tuple.Item1?.Items; // new ObservableCollection<ContactModel>(items); // load
+                DXCollectionViewContact.ItemsSource = tuple.Item1.Items; // new ObservableCollection<ContactModel>(items); // load
             }
         }
 

@@ -1,11 +1,137 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="DXMauiApp1.Pages.ReceiptMakeupPage"
-             Title="ReceiptMakeupPage">
+             Title="快递签收">
     <ContentPage.Content>
-        <Label
-            Text=" " />
-        <!--快递单号、长、宽、高、体积、重量、会员代号-->
+
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="24">
+
+            <dxe:TextEdit 
+                x:Name="TextEditWaybillNumber"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                ClearIconVisibility="Auto"
+                CornerRadius="8"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="快递单号"
+                Margin="0,-11,0,-16"
+                TextChanged="TextEditWaybillNumber_TextChanged"
+                TextFontSize="17" />
+
+            <dxe:NumericEdit 
+                x:Name="NumericEditLength"
+                AllowNullValue="True"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                ClearIconVisibility="Never"
+                CornerRadius="8"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="长 CM"
+                Margin="0,-11,0,-16"
+                MaxDecimalDigitCount="0"
+                TextFontSize="17"
+                TextHorizontalAlignment="Start"
+                ValueChanged="NumericEditLength_ValueChanged" />
+
+            <dxe:NumericEdit 
+                x:Name="NumericEditWidth"
+                AllowNullValue="True"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                ClearIconVisibility="Never"
+                CornerRadius="8"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="宽 CM"
+                Margin="0,-11,0,-16"
+                MaxDecimalDigitCount="0"
+                TextFontSize="17"
+                TextHorizontalAlignment="Start"
+                ValueChanged="NumericEditWidth_ValueChanged" />
+
+            <dxe:NumericEdit 
+                x:Name="NumericEditHeight"
+                AllowNullValue="True"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                ClearIconVisibility="Never"
+                CornerRadius="8"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="高 CM"
+                Margin="0,-11,0,-16"
+                MaxDecimalDigitCount="0"
+                TextFontSize="17"
+                TextHorizontalAlignment="Start"
+                ValueChanged="NumericEditHeight_ValueChanged" />
+
+            <dxe:NumericEdit 
+                x:Name="NumericEditWeight"
+                AllowNullValue="True"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                ClearIconVisibility="Never"
+                CornerRadius="8"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="重量 KG"
+                Margin="0,-11,0,-16"
+                MaxDecimalDigitCount="2"
+                TextFontSize="17"
+                TextHorizontalAlignment="Start"
+                ValueChanged="NumericEditWeight_ValueChanged" />
+
+            <dxe:TextEdit 
+                x:Name="TextEditMemberNumber"
+                BoxPadding="18,16"
+                BorderThickness="0.9"
+                ClearIconVisibility="Never"
+                CornerRadius="8"
+                DisabledBorderThickness="0.9"
+                ErrorText=" "
+                FocusedBorderThickness="0.9"
+                HelpText=" "
+                IsErrorIconVisible="False"
+                LabelFontSize="17"
+                LabelText="会员代号"
+                Margin="0,-11,0,-16"
+                TextChanged="TextEditMemberNumber_TextChanged"
+                TextFontSize="17" />
+
+            <Button 
+                x:Name="ButtonSubmit"
+                Clicked="ButtonSubmit_Clicked"
+                FontSize="17"
+                HeightRequest="56"
+                Text="立即提交" />
+
+        </VerticalStackLayout>
+
     </ContentPage.Content>
 </ContentPage>

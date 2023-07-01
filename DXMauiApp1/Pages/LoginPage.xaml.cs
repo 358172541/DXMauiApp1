@@ -1,5 +1,6 @@
 using DXMauiApp1.Models;
 using DXMauiApp1.Services;
+using System;
 
 namespace DXMauiApp1.Pages
 {
@@ -33,22 +34,29 @@ namespace DXMauiApp1.Pages
             if (Common.TextEditBaseRequired(TextEditAccount) &&
                 Common.TextEditBaseRequired(PasswordEditPassword))
             {
-                var tuple = await AdminService.LoginAsync(
+                try
+                {
+                    var tuple = await AdminService.LoginAsync(
                     new AdminLoginModel
                     {
                         Account = TextEditAccount.Text,
                         Password = PasswordEditPassword.Text
                     });
 
-                if (tuple.Item2 != null)
-                {
-                    await DisplayAlert("ьньньньн", tuple.Item2.Text + "║╦" + tuple.Item2.Code + "║╧", "ьньн");
-                    return;
+                    if (tuple.Item2 != null)
+                    {
+                        await DisplayAlert("ьньньньн", tuple.Item2.Text + "║╦" + tuple.Item2.Code + "║╧", "ьньн");
+                        return;
+                    }
+
+                    Preferences.Set("AccessToken", tuple.Item1.AccessToken);
+
+                    await Shell.Current.GoToAsync("///" + nameof(ReceiptMakeupPage), true);
                 }
-
-                Preferences.Set("AccessToken", tuple.Item1.AccessToken);
-
-                await Shell.Current.GoToAsync("///" + nameof(ReceiptMakeupPage), true);
+                catch (Exception ex)
+                {
+                    await DisplayAlert("ьньньньн", ex.Message, "ьньн");
+                }
             }
         }
     }

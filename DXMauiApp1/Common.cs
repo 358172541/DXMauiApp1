@@ -8,11 +8,11 @@ namespace DXMauiApp1
 {
     public static class Common
     {
-        public static bool TextEditBaseRequired(
+        public static bool TextEditBaseRequired( // PasswordEdit、TextEdit
             TextEditBase textEditBase,
             string errorText = "匚匚匚匚匚匚匚")
         {
-            if (string.IsNullOrEmpty(textEditBase.Text))
+            if (string.IsNullOrWhiteSpace(textEditBase.Text))
             {
                 textEditBase.ErrorText = errorText;
                 textEditBase.HasError = true;
@@ -22,6 +22,24 @@ namespace DXMauiApp1
             {
                 textEditBase.ErrorText = " ";
                 textEditBase.HasError = false;
+                return true;
+            }
+        }
+
+        public static bool NumericEditRequired( // NumericEdit
+            NumericEdit numericEdit,
+            string errorText = "匚匚匚匚匚匚匚")
+        {
+            if (numericEdit.Value == null)
+            {
+                numericEdit.ErrorText = errorText;
+                numericEdit.HasError = true;
+                return false;
+            }
+            else
+            {
+                numericEdit.ErrorText = " ";
+                numericEdit.HasError = false;
                 return true;
             }
         }

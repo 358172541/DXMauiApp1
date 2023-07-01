@@ -36,7 +36,13 @@ namespace DXMauiApp1.Services
         {
             var httpClient = CreateHttpClient();
 
-            var httpContent = new StringContent(JsonSerializer.Serialize(createModel), Encoding.UTF8, "application/json");
+            var jsonString = JsonSerializer.Serialize(createModel,
+                new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+
+            var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             var httpResponseMessage = await httpClient.PostAsync("api/mac/contact", httpContent);
 
@@ -56,7 +62,13 @@ namespace DXMauiApp1.Services
         {
             var httpClient = CreateHttpClient();
 
-            var httpContent = new StringContent(JsonSerializer.Serialize(updateModel), Encoding.UTF8, "application/json");
+            var jsonString = JsonSerializer.Serialize(updateModel,
+                new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+
+            var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             var httpResponseMessage = await httpClient.PutAsync("api/mac/contact/" + updateModel.Id, httpContent);
 

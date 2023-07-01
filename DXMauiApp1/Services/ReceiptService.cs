@@ -36,9 +36,15 @@ namespace DXMauiApp1.Services
         {
             var httpClient = CreateHttpClient();
 
-            var httpContent = new StringContent(JsonSerializer.Serialize(updateModel), Encoding.UTF8, "application/json");
+            var jsonString = JsonSerializer.Serialize(updateModel,
+                new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
 
-            var httpResponseMessage = await httpClient.PutAsync("api/mac/receipt/makeup", httpContent);
+            var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var httpResponseMessage = await httpClient.PostAsync("api/mac/receipt/makeup", httpContent);
 
             return await Common.HttpResponseMessageHandleAsync<EmptyModel, ErrorModel>(httpResponseMessage);
         }
