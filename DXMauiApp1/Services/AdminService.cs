@@ -27,11 +27,7 @@ namespace DXMauiApp1.Services
         {
             var httpClient = CreateHttpClient();
 
-            var jsonString = JsonSerializer.Serialize(loginModel,
-                new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                });
+            var jsonString = JsonSerializer.Serialize(loginModel, Common.JsonSerializerOptions);
 
             var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 

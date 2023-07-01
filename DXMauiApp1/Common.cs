@@ -8,6 +8,17 @@ namespace DXMauiApp1
 {
     public static class Common
     {
+        public static JsonSerializerOptions JsonSerializerOptions
+        {
+            get
+            {
+                return new JsonSerializerOptions()
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+            }
+        }
+
         public static bool TextEditBaseRequired( // PasswordEdit、TextEdit
             TextEditBase textEditBase,
             string errorText = "匚匚匚匚匚匚匚")
@@ -92,13 +103,13 @@ namespace DXMauiApp1
                 if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     item1 = JsonSerializer.Deserialize<TItem1>(
                         await httpResponseMessage.Content.ReadAsStringAsync(),
-                        new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                        JsonSerializerOptions);
             }
             else
             {
                 item2 = JsonSerializer.Deserialize<TItem2>(
-                    await httpResponseMessage.Content.ReadAsStringAsync(),
-                    new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                    await httpResponseMessage.Content.ReadAsStringAsync(), 
+                    JsonSerializerOptions);
             }
 
             return Tuple.Create(item1, item2);
