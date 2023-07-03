@@ -12,4 +12,8 @@ keytool -genkey -v -keystore publish.keystore -alias PublishKeyStore -keyalg RSA
 	<AndroidSigningKeyPass>1q2w3E*</AndroidSigningKeyPass>
 </PropertyGroup>
 
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+<uses-permission android:name="android.permission.INTERNET" />
+
 dotnet publish -c Release -f:net7.0-android
