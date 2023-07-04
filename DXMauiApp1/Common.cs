@@ -116,5 +116,10 @@ namespace DXMauiApp1
 
             return Tuple.Create(item1, item2);
         }
+
+        public static decimal Volume(decimal cmL, decimal cmW, decimal cmH, int piece = 1)
+        {
+            return Math.Ceiling(cmL * cmW * cmH * piece / 1000000m * 10000m) / 10000m;
+        }
     }
 }

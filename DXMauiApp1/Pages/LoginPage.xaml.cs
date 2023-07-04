@@ -1,6 +1,5 @@
 using DXMauiApp1.Models;
 using DXMauiApp1.Services;
-using System;
 
 namespace DXMauiApp1.Pages
 {
@@ -14,6 +13,9 @@ namespace DXMauiApp1.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            TextEditAccount.Text = "admin";
+            PasswordEditPassword.Text = "1q2w3E*";
 
             Common.TextEditBaseRequired(TextEditAccount);
             Common.TextEditBaseRequired(PasswordEditPassword);

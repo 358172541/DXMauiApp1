@@ -6,188 +6,219 @@
              x:Class="DXMauiApp1.Pages.Packag1120UpdatePage"
              Title="更新位置">
     <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout
+                Padding="24"
+                Spacing="24">
 
-        <VerticalStackLayout
-            Padding="24"
-            Spacing="24">
+                <Grid
+                    BackgroundColor="WhiteSmoke"
+                    Margin="-24,-24,-24,0"
+                    Padding="24">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-            <dxe:TextEdit 
-                x:Name="TextEditWaybillNumber"
-                BoxPadding="18,16"
-                BorderThickness="0.9"
-                ClearIconVisibility="Auto"
-                CornerRadius="8"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelFontSize="17"
-                LabelText="快递单号"
-                Margin="0,-11,0,-16"
-                TextChanged="TextEditWaybillNumber_TextChanged"
-                TextFontSize="17" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="56" />
+                    </Grid.RowDefinitions>
 
-            <dxe:TextEdit 
-                x:Name="TextEditLocation"
-                BoxPadding="18,16"
-                BorderThickness="0.9"
-                ClearIconVisibility="Auto"
-                CornerRadius="8"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelFontSize="17"
-                LabelText="库位"
-                Margin="0,-11,0,-16"
-                TextChanged="TextEditLocation_TextChanged"
-                TextFontSize="17" />
+                    <dxe:TextEdit 
+                        x:Name="TextEditWaybillNumber"
+                        BackgroundColor="White"
+                        BoxPadding="18,16"
+                        BorderThickness="0.9"
+                        ClearIconClicked="TextEditWaybillNumber_ClearIconClicked"
+                        ClearIconVisibility="Auto"
+                        CornerRadius="0"
+                        DisabledBorderThickness="0.9"
+                        ErrorText=" "
+                        FocusedBorderThickness="0.9"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HelpText=" "
+                        IsErrorIconVisible="False"
+                        LabelFontSize="17"
+                        LabelText="快递单号"
+                        Margin="0,-11,0,-16"
+                        TextChanged="TextEditWaybillNumber_TextChanged"
+                        TextFontSize="17" />
 
-            <dxe:MultilineEdit
-                x:Name="MultilineEditCargoDescription"
-                BoxPadding="18,16"
-                BorderThickness="0.9"
-                ClearIconVisibility="Never"
-                CornerRadius="8"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelFontSize="17"
-                LabelText="品名"
-                Margin="0,-11,0,-16"
-                MinLineCount="4"
-                TextChanged="MultilineEditCargoDescription_TextChanged"
-                TextFontSize="17" />
+                    <Button 
+                        x:Name="ButtonSearch"
+                        Clicked="ButtonSearch_Clicked"
+                        CornerRadius="0"
+                        FontSize="17"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HeightRequest="56"
+                        Text="查询" 
+                        WidthRequest="75" />
+                </Grid>
 
-            <dxe:NumericEdit 
-                x:Name="NumericEditVolume"
-                AllowNullValue="True"
-                BoxPadding="18,16"
-                BorderThickness="0.9"
-                ClearIconVisibility="Never"
-                CornerRadius="8"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelFontSize="17"
-                LabelText="体积 M³"
-                Margin="0,-11,0,-16"
-                MaxDecimalDigitCount="4"
-                TextFontSize="17"
-                TextHorizontalAlignment="Start"
-                ValueChanged="NumericEditVolume_ValueChanged" />
+                <dxe:TextEdit 
+                    x:Name="TextEditLocation"
+                    BoxPadding="18,16"
+                    BorderThickness="0.9"
+                    ClearIconVisibility="Never"
+                    CornerRadius="0"
+                    DisabledBorderThickness="0.9"
+                    ErrorText=" "
+                    FocusedBorderThickness="0.9"
+                    HelpText=" "
+                    IsErrorIconVisible="False"
+                    LabelFontSize="17"
+                    LabelText="库位"
+                    Margin="0,-11,0,-16"
+                    TextChanged="TextEditLocation_TextChanged"
+                    TextFontSize="17" />
 
-            <Grid
-                BackgroundColor="WhiteSmoke"
-                Margin="-24,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="75" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+                <dxe:MultilineEdit
+                    x:Name="MultilineEditCargoDescription"
+                    BoxPadding="18,16"
+                    BorderThickness="0.9"
+                    ClearIconVisibility="Never"
+                    CornerRadius="0"
+                    DisabledBorderThickness="0.9"
+                    ErrorText=" "
+                    FocusedBorderThickness="0.9"
+                    HelpText=" "
+                    IsErrorIconVisible="False"
+                    LabelFontSize="17"
+                    LabelText="品名"
+                    Margin="0,-11,0,-16"
+                    MinLineCount="4"
+                    TextChanged="MultilineEditCargoDescription_TextChanged"
+                    TextFontSize="17" />
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="56" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                <dxe:NumericEdit 
+                    x:Name="NumericEditVolume"
+                    AllowNullValue="True"
+                    BoxPadding="18,16"
+                    BorderThickness="0.9"
+                    ClearIconVisibility="Never"
+                    CornerRadius="0"
+                    DisabledBorderThickness="0.9"
+                    ErrorText=" "
+                    FocusedBorderThickness="0.9"
+                    HelpText=" "
+                    IsErrorIconVisible="False"
+                    LabelFontSize="17"
+                    LabelText="体积 M³"
+                    Margin="0,-11,0,-16"
+                    MaxDecimalDigitCount="4"
+                    TextFontSize="17"
+                    TextHorizontalAlignment="Start"
+                    ValueChanged="NumericEditVolume_ValueChanged" />
 
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Text="体积明细" />
+                <Grid
+                    BackgroundColor="WhiteSmoke"
+                    Margin="-24,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-                <Label
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Text="0.0000 M³" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="56" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Text="体积明细" />
+
+                    <Label
+                        x:Name="LabelTotalVolume"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Text="0 M³" />
+
+                    <Button 
+                        x:Name="ButtonCreate"
+                        Clicked="ButtonCreate_Clicked"
+                        CornerRadius="0"
+                        FontSize="17"
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        HeightRequest="56"
+                        Text="新增" 
+                        WidthRequest="75" />
+
+                    <Frame
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        Padding="0">
+                        <dxg:DataGridView 
+                            x:Name="DataGridViewSizeLs"
+                            ColumnHeaderHeight="56"
+                            FullSwipeMode="None"
+                            ReduceHeightToContent="True"
+                            RowHeight="56"
+                            SelectionMode="None"
+                            AllowSort="False">
+
+                            <dxg:DataGridView.Columns>
+                                <dxg:TextColumn 
+                                    Caption="长 CM"
+                                    FieldName="L"
+                                    HorizontalContentAlignment="Center"
+                                    Width="12*" />
+
+                                <dxg:TextColumn 
+                                    Caption="宽 CM" 
+                                    FieldName="W" 
+                                    HorizontalContentAlignment="Center"
+                                    Width="12*" />
+
+                                <dxg:TextColumn 
+                                    Caption="高 CM"
+                                    FieldName="H" 
+                                    HorizontalContentAlignment="Center"
+                                    Width="12*" />
+
+                                <dxg:TextColumn 
+                                    Caption="体积 M³"
+                                    FieldName="V" 
+                                    HorizontalContentAlignment="Center"
+                                    Width="15*" />
+
+                                <dxg:TextColumn 
+                                    Caption="件数"
+                                    FieldName="P" 
+                                    HorizontalContentAlignment="Center"
+                                    Width="12*" />
+                            </dxg:DataGridView.Columns>
+
+                            <dxg:DataGridView.EndSwipeItems>
+                                <dxg:SwipeItem 
+                                    x:Name="SwipeItemDelete"
+                                    BackgroundColor="Crimson"
+                                    Caption="删除" 
+                                    Tap="SwipeItemDelete_Tap"
+                                    Width="75" />
+                            </dxg:DataGridView.EndSwipeItems>
+                        </dxg:DataGridView>
+                    </Frame>
+                </Grid>
 
                 <Button 
-                    x:Name="ButtonCreate"
-                    Clicked="ButtonCreate_Clicked"
+                    x:Name="ButtonSubmit"
+                    Clicked="ButtonSubmit_Clicked"
                     CornerRadius="0"
                     FontSize="17"
-                    Grid.Column="2"
-                    Grid.Row="0"
                     HeightRequest="56"
-                    Text="新增" 
-                    WidthRequest="75" />
+                    Text="立即提交" />
 
-                <Frame
-                    Grid.Column="0"
-                    Grid.Row="1"
-                    Grid.ColumnSpan="3"
-                    Padding="0">
-                    <dxg:DataGridView 
-                        x:Name="DataGridViewSizeLs"
-                        ColumnHeaderHeight="56"
-                        FullSwipeMode="None"
-                        ReduceHeightToContent="True"
-                        RowHeight="56"
-                        SelectionMode="None"
-                        AllowSort="False">
-
-                        <dxg:DataGridView.Columns>
-                            <dxg:TextColumn 
-                                Caption="长 CM"
-                                FieldName="L"
-                                HorizontalContentAlignment="Center"
-                                Width="12*" />
-
-                            <dxg:TextColumn 
-                                Caption="宽 CM" 
-                                FieldName="W" 
-                                HorizontalContentAlignment="Center"
-                                Width="12*" />
-
-                            <dxg:TextColumn 
-                                Caption="高 CM"
-                                FieldName="H" 
-                                HorizontalContentAlignment="Center"
-                                Width="12*" />
-
-                            <dxg:TextColumn 
-                                Caption="体积 M³"
-                                FieldName="V" 
-                                HorizontalContentAlignment="Center"
-                                Width="15*" />
-
-                            <dxg:TextColumn 
-                                Caption="件数"
-                                FieldName="P" 
-                                HorizontalContentAlignment="Center"
-                                Width="12*" />
-                        </dxg:DataGridView.Columns>
-
-                        <dxg:DataGridView.EndSwipeItems>
-                            <dxg:SwipeItem 
-                                x:Name="SwipeItemDelete"
-                                BackgroundColor="Crimson"
-                                Caption="删除" 
-                                Tap="SwipeItemDelete_Tap"
-                                Width="75" />
-                        </dxg:DataGridView.EndSwipeItems>
-                    </dxg:DataGridView>
-                </Frame>
-            </Grid>
-
-            <Button 
-                x:Name="ButtonSubmit"
-                Clicked="ButtonSubmit_Clicked"
-                FontSize="17"
-                HeightRequest="56"
-                Text="立即提交" />
-
-        </VerticalStackLayout>
-
+            </VerticalStackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
