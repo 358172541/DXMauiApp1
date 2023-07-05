@@ -10,22 +10,51 @@
             Padding="24"
             Spacing="24">
 
-            <dxe:TextEdit 
-                x:Name="TextEditWaybillNumber"
-                BoxPadding="18,16"
-                BorderThickness="0.9"
-                ClearIconVisibility="Auto"
-                CornerRadius="0"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelFontSize="17"
-                LabelText="快递单号"
-                Margin="0,-11,0,-16"
-                TextChanged="TextEditWaybillNumber_TextChanged"
-                TextFontSize="17" />
+            <Grid
+                    BackgroundColor="WhiteSmoke"
+                    Margin="-24,-24,-24,0"
+                    Padding="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56" />
+                </Grid.RowDefinitions>
+
+                <dxe:TextEdit 
+                        x:Name="TextEditWaybillNumber"
+                        BackgroundColor="White"
+                        BoxPadding="18,16"
+                        BorderThickness="0.9"
+                        ClearIconClicked="TextEditWaybillNumber_ClearIconClicked"
+                        ClearIconVisibility="Auto"
+                        CornerRadius="0"
+                        DisabledBorderThickness="0.9"
+                        ErrorText=" "
+                        FocusedBorderThickness="0.9"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HelpText=" "
+                        IsErrorIconVisible="False"
+                        LabelFontSize="17"
+                        LabelText="快递单号"
+                        Margin="0,-11,0,-16"
+                        TextChanged="TextEditWaybillNumber_TextChanged"
+                        TextFontSize="17" />
+
+                <Button 
+                        x:Name="ButtonSearch"
+                        Clicked="ButtonSearch_Clicked"
+                        CornerRadius="0"
+                        FontSize="17"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HeightRequest="56"
+                        Text="查询" 
+                        WidthRequest="75" />
+            </Grid>
 
             <dxe:NumericEdit 
                 x:Name="NumericEditLength"

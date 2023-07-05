@@ -1,5 +1,6 @@
 using DXMauiApp1.Models;
 using DXMauiApp1.Services;
+using System.Collections.ObjectModel;
 
 namespace DXMauiApp1.Pages;
 
@@ -24,10 +25,8 @@ public partial class ReceiptMakeupPage : ContentPage
         Common.TextEditBaseRequired(TextEditMemberNumber);
     }
 
-    private async void TextEditWaybillNumber_TextChanged(object sender, EventArgs e)
+    private async void ButtonSearch_Clicked(object sender, EventArgs e)
     {
-        Common.TextEditBaseRequired(TextEditWaybillNumber);
-
         if (!string.IsNullOrWhiteSpace(TextEditWaybillNumber.Text))
         {
             var tuple = await ReceiptService.MakeupSearchAsync(
@@ -59,13 +58,17 @@ public partial class ReceiptMakeupPage : ContentPage
             return;
         }
 
-        PrimaryKey = default;
-        TextEditWaybillNumber.Text = "";
-        NumericEditLength.Value = null;
-        NumericEditWidth.Value = null;
-        NumericEditHeight.Value = null;
-        NumericEditWeight.Value = null;
-        TextEditMemberNumber.Text = "";
+        Clear();
+    }
+
+    private void TextEditWaybillNumber_ClearIconClicked(object sender, System.ComponentModel.HandledEventArgs e)
+    {
+        Clear();
+    }
+
+    private void TextEditWaybillNumber_TextChanged(object sender, EventArgs e)
+    {
+        Common.TextEditBaseRequired(TextEditWaybillNumber);
     }
 
     private void NumericEditLength_ValueChanged(object sender, EventArgs e)
@@ -91,6 +94,17 @@ public partial class ReceiptMakeupPage : ContentPage
     private void TextEditMemberNumber_TextChanged(object sender, EventArgs e)
     {
         Common.TextEditBaseRequired(TextEditMemberNumber);
+    }
+
+    private void Clear()
+    {
+        PrimaryKey = default;
+        TextEditWaybillNumber.Text = string.Empty;
+        NumericEditLength.Value = null;
+        NumericEditWidth.Value = null;
+        NumericEditHeight.Value = null;
+        NumericEditWeight.Value = null;
+        TextEditMemberNumber.Text = string.Empty;
     }
 
     private async void ButtonSubmit_Clicked(object sender, EventArgs e)
@@ -120,13 +134,7 @@ public partial class ReceiptMakeupPage : ContentPage
                 return;
             }
 
-            PrimaryKey = default;
-            TextEditWaybillNumber.Text = "";
-            NumericEditLength.Value = null;
-            NumericEditWidth.Value = null;
-            NumericEditHeight.Value = null;
-            NumericEditWeight.Value = null;
-            TextEditMemberNumber.Text = "";
+            Clear();
         }
     }
 }
