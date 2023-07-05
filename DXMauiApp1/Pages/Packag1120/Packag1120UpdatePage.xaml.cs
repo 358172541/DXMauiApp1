@@ -18,6 +18,8 @@ public partial class Packag1120UpdatePage : ContentPage
 
     public List<SizeModel> SizeLs { get; set; } = new List<SizeModel>();
 
+    public int SizeLsCreateUpdateIndex { get; set; } = -1; // -1 create else update
+
     protected override void OnAppearing()
     {
         base.OnAppearing();
@@ -60,6 +62,7 @@ public partial class Packag1120UpdatePage : ContentPage
 
             DataGridViewSizeLs.ItemsSource = new ObservableCollection<SizeModel>(SizeLs);
             LabelTotalVolume.Text = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P)) + " M³";
+            ButtonSizeLsCreate.IsEnabled = true;
 
             return;
         }
@@ -92,29 +95,49 @@ public partial class Packag1120UpdatePage : ContentPage
         Common.NumericEditRequired(NumericEditVolume);
     }
 
-    private void ButtonCreate_Clicked(object sender, EventArgs e)
+    private void ButtonSizeLsCreate_Clicked(object sender, EventArgs e)
     {
-        SizeLs.Add(new SizeModel
-        {
-            H = 111,
-            L = 111,
-            P = 1,
-            V = 1.3677m,
-            W = 111
-        });
+        SizeLsCreateUpdateIndex = -1;
 
-        DataGridViewSizeLs.ItemsSource = new ObservableCollection<SizeModel>(SizeLs);
-        LabelTotalVolume.Text = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P)) + " M³";
+        NumericEditSizeLsCreateUpdateL.Value = null;
+        NumericEditSizeLsCreateUpdateW.Value = null;
+        NumericEditSizeLsCreateUpdateH.Value = null;
+        NumericEditSizeLsCreateUpdateV.Value = null;
+        NumericEditSizeLsCreateUpdateP.Value = null;
 
-        NumericEditVolume.Value = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P));
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateL);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateW);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateH);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateV);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateP);
+
+        ScrollViewSizeLsCreateUpdate.ScrollToAsync(0, 0, false);
+        DXPopupSizeLsCreateUpdate.IsOpen = true;
     }
 
-    private void SwipeItemUpdate_Tap(object sender, SwipeItemTapEventArgs e)
+    private void SwipeItemSizeLsUpdate_Tap(object sender, SwipeItemTapEventArgs e)
     {
-        DXPopupUpdate.IsOpen = true;
+        SizeLsCreateUpdateIndex = e.RowHandle;
+
+        var sizeModel = e.Item as SizeModel;
+
+        NumericEditSizeLsCreateUpdateL.Value = sizeModel.L;
+        NumericEditSizeLsCreateUpdateW.Value = sizeModel.W;
+        NumericEditSizeLsCreateUpdateH.Value = sizeModel.H;
+        NumericEditSizeLsCreateUpdateV.Value = sizeModel.V;
+        NumericEditSizeLsCreateUpdateP.Value = sizeModel.P;
+
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateL);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateW);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateH);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateV);
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateP);
+
+        ScrollViewSizeLsCreateUpdate.ScrollToAsync(0, 0, false);
+        DXPopupSizeLsCreateUpdate.IsOpen = true;
     }
 
-    private void SwipeItemDelete_Tap(object sender, SwipeItemTapEventArgs e)
+    private void SwipeItemSizeLsDelete_Tap(object sender, SwipeItemTapEventArgs e)
     {
         SizeLs.RemoveAt(e.RowHandle);
 
@@ -122,6 +145,54 @@ public partial class Packag1120UpdatePage : ContentPage
         LabelTotalVolume.Text = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P)) + " M³";
 
         NumericEditVolume.Value = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P));
+    }
+
+    private void ButtonSizeLsCreateUpdateSubmit_Clicked(object sender, EventArgs e)
+    {
+        if (Common.NumericEditRequired(NumericEditSizeLsCreateUpdateL) &&
+            Common.NumericEditRequired(NumericEditSizeLsCreateUpdateW) &&
+            Common.NumericEditRequired(NumericEditSizeLsCreateUpdateH) &&
+            Common.NumericEditRequired(NumericEditSizeLsCreateUpdateV) &&
+            Common.NumericEditRequired(NumericEditSizeLsCreateUpdateP))
+        {
+            if (SizeLsCreateUpdateIndex == -1)
+            {
+                SizeLs.Add(new SizeModel
+                {
+                    H = (int)NumericEditSizeLsCreateUpdateH.Value,
+                    L = (int)NumericEditSizeLsCreateUpdateL.Value,
+                    P = (int)NumericEditSizeLsCreateUpdateP.Value,
+                    V = (decimal)NumericEditSizeLsCreateUpdateV.Value,
+                    W = (int)NumericEditSizeLsCreateUpdateW.Value,
+                });
+            }
+            else
+            {
+                SizeLs[SizeLsCreateUpdateIndex].H = (int)NumericEditSizeLsCreateUpdateH.Value;
+                SizeLs[SizeLsCreateUpdateIndex].L = (int)NumericEditSizeLsCreateUpdateL.Value;
+                SizeLs[SizeLsCreateUpdateIndex].P = (int)NumericEditSizeLsCreateUpdateP.Value;
+                SizeLs[SizeLsCreateUpdateIndex].V = (decimal)NumericEditSizeLsCreateUpdateV.Value;
+                SizeLs[SizeLsCreateUpdateIndex].W = (int)NumericEditSizeLsCreateUpdateW.Value;
+            }
+
+            DataGridViewSizeLs.ItemsSource = new ObservableCollection<SizeModel>(SizeLs);
+            LabelTotalVolume.Text = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P)) + " M³";
+
+            NumericEditVolume.Value = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P));
+
+            SizeLsCreateUpdateCancel();
+        }
+    }
+
+    public void SizeLsCreateUpdateCancel()
+    {
+        SizeLsCreateUpdateIndex = -1;
+        DXPopupSizeLsCreateUpdate.IsOpen = false;
+    }
+
+    private void ButtonSizeLsCreateUpdateCancel_Clicked(object sender, EventArgs e)
+    {
+        SizeLsCreateUpdateCancel();
     }
 
     private async void ButtonSubmit_Clicked(object sender, EventArgs e)
@@ -162,10 +233,53 @@ public partial class Packag1120UpdatePage : ContentPage
 
         DataGridViewSizeLs.ItemsSource = new ObservableCollection<SizeModel>(SizeLs);
         LabelTotalVolume.Text = SizeLs.Sum(x => Math.Ceiling(x.L * x.W * x.H * x.P / 1000000m * 10000m) / 10000m) + " M³";
+        ButtonSizeLsCreate.IsEnabled = false;
     }
 
-    private void ButtonUpdateCancel_Clicked(object sender, EventArgs e)
+    private void SizeLsCreateUpdateLWHValueChanged()
     {
-        DXPopupUpdate.IsOpen = false;
+        var cmL = NumericEditSizeLsCreateUpdateL.Value;
+        var cmW = NumericEditSizeLsCreateUpdateW.Value;
+        var cmH = NumericEditSizeLsCreateUpdateH.Value;
+
+        if (cmL != null && cmW != null && cmH != null)
+        {
+            NumericEditSizeLsCreateUpdateV.Value = Common.Volume((decimal)cmL, (decimal)cmW, (decimal)cmH);
+        }
+        else
+        {
+            NumericEditSizeLsCreateUpdateV.Value = null;
+        }
+    }
+
+    private void NumericEditSizeLsCreateUpdateL_ValueChanged(object sender, EventArgs e)
+    {
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateL);
+
+        SizeLsCreateUpdateLWHValueChanged();
+    }
+
+    private void NumericEditSizeLsCreateUpdateW_ValueChanged(object sender, EventArgs e)
+    {
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateW);
+
+        SizeLsCreateUpdateLWHValueChanged();
+    }
+
+    private void NumericEditSizeLsCreateUpdateH_ValueChanged(object sender, EventArgs e)
+    {
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateH);
+
+        SizeLsCreateUpdateLWHValueChanged();
+    }
+
+    private void NumericEditSizeLsCreateUpdateV_ValueChanged(object sender, EventArgs e)
+    {
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateV);
+    }
+
+    private void NumericEditSizeLsCreateUpdateP_ValueChanged(object sender, EventArgs e)
+    {
+        Common.NumericEditRequired(NumericEditSizeLsCreateUpdateP);
     }
 }

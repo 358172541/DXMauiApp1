@@ -41,7 +41,7 @@
                         HelpText=" "
                         IsErrorIconVisible="False"
                         LabelFontSize="17"
-                        LabelText="快递单号"
+                        LabelText="运单号"
                         Margin="0,-11,0,-16"
                         TextChanged="TextEditWaybillNumber_TextChanged"
                         TextFontSize="17" />
@@ -143,13 +143,14 @@
                         Text="0 M³" />
 
                     <Button 
-                        x:Name="ButtonCreate"
-                        Clicked="ButtonCreate_Clicked"
+                        x:Name="ButtonSizeLsCreate"
+                        Clicked="ButtonSizeLsCreate_Clicked"
                         CornerRadius="0"
                         FontSize="17"
                         Grid.Column="2"
                         Grid.Row="0"
                         HeightRequest="56"
+                        IsEnabled="False"
                         Text="新增" 
                         WidthRequest="75" />
 
@@ -201,16 +202,16 @@
 
                             <dxg:DataGridView.EndSwipeItems>
                                 <dxg:SwipeItem 
-                                    x:Name="SwipeItemUpdate"
+                                    x:Name="SwipeItemSizeLsUpdate"
                                     BackgroundColor="Navy"
                                     Caption="编辑" 
-                                    Tap="SwipeItemUpdate_Tap"
+                                    Tap="SwipeItemSizeLsUpdate_Tap"
                                     Width="75" />
                                 <dxg:SwipeItem 
-                                    x:Name="SwipeItemDelete"
+                                    x:Name="SwipeItemSizeLsDelete"
                                     BackgroundColor="Crimson"
                                     Caption="删除" 
-                                    Tap="SwipeItemDelete_Tap"
+                                    Tap="SwipeItemSizeLsDelete_Tap"
                                     Width="75" />
                             </dxg:DataGridView.EndSwipeItems>
                         </dxg:DataGridView>
@@ -226,7 +227,7 @@
                     Text="立即提交" />
 
                 <dxc:DXPopup 
-                    x:Name="DXPopupUpdate"
+                    x:Name="DXPopupSizeLsCreateUpdate"
                     AllowScrim="True"
                     CornerRadius="0"
                     HorizontalAlignment="Stretch"
@@ -234,98 +235,147 @@
                     VerticalAlignment="Bottom">
 
                     <ScrollView 
+                        x:Name="ScrollViewSizeLsCreateUpdate"
                         MaximumHeightRequest="512">
                         <VerticalStackLayout
-                        Padding="24"
-                        Spacing="24"
-                            VerticalOptions="Center">
-                            <dxe:TextEdit 
-                            BoxPadding="18,16"
-                            BorderThickness="0.9"
-                            ClearIconVisibility="Never"
-                            CornerRadius="0"
-                            DisabledBorderThickness="0.9"
-                            ErrorText=" "
-                            FocusedBorderThickness="0.9"
-                            HelpText=" "
-                            IsErrorIconVisible="False"
-                            LabelFontSize="17"
-                            LabelText="匚匚"
-                            Margin="0,-11,0,-16"
-                            TextFontSize="17" />
+                            Padding="24"
+                            Spacing="24">
 
-                            <dxe:TextEdit 
-                            BoxPadding="18,16"
-                            BorderThickness="0.9"
-                            ClearIconVisibility="Never"
-                            CornerRadius="0"
-                            DisabledBorderThickness="0.9"
-                            ErrorText=" "
-                            FocusedBorderThickness="0.9"
-                            HelpText=" "
-                            IsErrorIconVisible="False"
-                            LabelFontSize="17"
-                            LabelText="匚匚"
-                            Margin="0,-11,0,-16"
-                            TextFontSize="17" />
+                            <dxe:NumericEdit 
+                                x:Name="NumericEditSizeLsCreateUpdateL"
+                                AllowNullValue="True"
+                                BoxPadding="18,16"
+                                BorderThickness="0.9"
+                                ClearIconVisibility="Never"
+                                CornerRadius="0"
+                                DisabledBorderThickness="0.9"
+                                ErrorText=" "
+                                FocusedBorderThickness="0.9"
+                                HelpText=" "
+                                IsErrorIconVisible="False"
+                                LabelFontSize="17"
+                                LabelText="长 CM"
+                                Margin="0,-11,0,-16"
+                                MaxDecimalDigitCount="0"
+                                TextFontSize="17"
+                                TextHorizontalAlignment="Start"
+                                ValueChanged="NumericEditSizeLsCreateUpdateL_ValueChanged" />
 
-                            <dxe:TextEdit 
-                            BoxPadding="18,16"
-                            BorderThickness="0.9"
-                            ClearIconVisibility="Never"
-                            CornerRadius="0"
-                            DisabledBorderThickness="0.9"
-                            ErrorText=" "
-                            FocusedBorderThickness="0.9"
-                            HelpText=" "
-                            IsErrorIconVisible="False"
-                            LabelFontSize="17"
-                            LabelText="匚匚"
-                            Margin="0,-11,0,-16"
-                            TextFontSize="17" />
+                            <dxe:NumericEdit 
+                                x:Name="NumericEditSizeLsCreateUpdateW"
+                                AllowNullValue="True"
+                                BoxPadding="18,16"
+                                BorderThickness="0.9"
+                                ClearIconVisibility="Never"
+                                CornerRadius="0"
+                                DisabledBorderThickness="0.9"
+                                ErrorText=" "
+                                FocusedBorderThickness="0.9"
+                                HelpText=" "
+                                IsErrorIconVisible="False"
+                                LabelFontSize="17"
+                                LabelText="宽 CM"
+                                Margin="0,-11,0,-16"
+                                MaxDecimalDigitCount="0"
+                                TextFontSize="17"
+                                TextHorizontalAlignment="Start"
+                                ValueChanged="NumericEditSizeLsCreateUpdateW_ValueChanged" />
 
-                            <dxe:TextEdit 
-                            BoxPadding="18,16"
-                            BorderThickness="0.9"
-                            ClearIconVisibility="Never"
-                            CornerRadius="0"
-                            DisabledBorderThickness="0.9"
-                            ErrorText=" "
-                            FocusedBorderThickness="0.9"
-                            HelpText=" "
-                            IsErrorIconVisible="False"
-                            LabelFontSize="17"
-                            LabelText="匚匚"
-                            Margin="0,-11,0,-16"
+                            <dxe:NumericEdit 
+                                x:Name="NumericEditSizeLsCreateUpdateH"
+                                AllowNullValue="True"
+                                BoxPadding="18,16"
+                                BorderThickness="0.9"
+                                ClearIconVisibility="Never"
+                                CornerRadius="0"
+                                DisabledBorderThickness="0.9"
+                                ErrorText=" "
+                                FocusedBorderThickness="0.9"
+                                HelpText=" "
+                                IsErrorIconVisible="False"
+                                LabelFontSize="17"
+                                LabelText="高 CM"
+                                Margin="0,-11,0,-16"
+                                MaxDecimalDigitCount="0"
+                                TextFontSize="17"
+                                TextHorizontalAlignment="Start"
+                                ValueChanged="NumericEditSizeLsCreateUpdateH_ValueChanged" />
+
+                            <dxe:NumericEdit 
+                                x:Name="NumericEditSizeLsCreateUpdateV"
+                                AllowNullValue="True"
+                                BoxPadding="18,16"
+                                BorderThickness="0.9"
+                                ClearIconVisibility="Never"
+                                CornerRadius="0"
+                                DisabledBorderThickness="0.9"
+                                ErrorText=" "
+                                FocusedBorderThickness="0.9"
+                                HelpText=" "
+                                IsErrorIconVisible="False"
                                 IsReadOnly="True"
-                            TextFontSize="17" />
+                                LabelFontSize="17"
+                                LabelText="体积 M³"
+                                Margin="0,-11,0,-16"
+                                MaxDecimalDigitCount="4"
+                                TextFontSize="17"
+                                TextHorizontalAlignment="Start"
+                                ValueChanged="NumericEditSizeLsCreateUpdateV_ValueChanged" />
 
-                            <dxe:TextEdit 
-                            BoxPadding="18,16"
-                            BorderThickness="0.9"
-                            ClearIconVisibility="Never"
-                            CornerRadius="0"
-                            DisabledBorderThickness="0.9"
-                            ErrorText=" "
-                            FocusedBorderThickness="0.9"
-                            HelpText=" "
-                            IsErrorIconVisible="False"
-                            LabelFontSize="17"
-                            LabelText="匚匚"
-                            Margin="0,-11,0,-16"
-                            TextFontSize="17" />
+                            <dxe:NumericEdit 
+                                x:Name="NumericEditSizeLsCreateUpdateP"
+                                AllowNullValue="True"
+                                BoxPadding="18,16"
+                                BorderThickness="0.9"
+                                ClearIconVisibility="Never"
+                                CornerRadius="0"
+                                DisabledBorderThickness="0.9"
+                                ErrorText=" "
+                                FocusedBorderThickness="0.9"
+                                HelpText=" "
+                                IsErrorIconVisible="False"
+                                LabelFontSize="17"
+                                LabelText="件数"
+                                Margin="0,-11,0,-16"
+                                MaxDecimalDigitCount="0"
+                                TextFontSize="17"
+                                TextHorizontalAlignment="Start"
+                                ValueChanged="NumericEditSizeLsCreateUpdateP_ValueChanged" />
 
-                            <Button 
-                            x:Name="ButtonUpdateCancel"
-                            Clicked="ButtonUpdateCancel_Clicked"
-                            CornerRadius="0"
-                            FontSize="17"
-                            HeightRequest="56"
-                            Text="CANCEL" />
+                            <Grid 
+                                ColumnSpacing="24">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="56" />
+                                </Grid.RowDefinitions>
+
+                                <Button 
+                                    x:Name="ButtonSizeLsCreateUpdateSubmit"
+                                    Clicked="ButtonSizeLsCreateUpdateSubmit_Clicked"
+                                    CornerRadius="0"
+                                    FontSize="17"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    HeightRequest="56"
+                                    Text="保存" />
+
+                                <Button 
+                                    x:Name="ButtonSizeLsCreateUpdateCancel"
+                                    Clicked="ButtonSizeLsCreateUpdateCancel_Clicked"
+                                    CornerRadius="0"
+                                    FontSize="17"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    HeightRequest="56"
+                                    Text="取消" />
+                            </Grid>
+
                         </VerticalStackLayout>
                     </ScrollView>
-
-                    
                 </dxc:DXPopup>
 
             </VerticalStackLayout>
