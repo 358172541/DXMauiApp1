@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
              x:Class="DXMauiApp1.Pages.Packag1120UpdatePage"
@@ -200,6 +201,12 @@
 
                             <dxg:DataGridView.EndSwipeItems>
                                 <dxg:SwipeItem 
+                                    x:Name="SwipeItemUpdate"
+                                    BackgroundColor="Navy"
+                                    Caption="编辑" 
+                                    Tap="SwipeItemUpdate_Tap"
+                                    Width="75" />
+                                <dxg:SwipeItem 
                                     x:Name="SwipeItemDelete"
                                     BackgroundColor="Crimson"
                                     Caption="删除" 
@@ -217,6 +224,109 @@
                     FontSize="17"
                     HeightRequest="56"
                     Text="立即提交" />
+
+                <dxc:DXPopup 
+                    x:Name="DXPopupUpdate"
+                    AllowScrim="True"
+                    CornerRadius="0"
+                    HorizontalAlignment="Stretch"
+                    Margin="24"
+                    VerticalAlignment="Bottom">
+
+                    <ScrollView 
+                        MaximumHeightRequest="512">
+                        <VerticalStackLayout
+                        Padding="24"
+                        Spacing="24"
+                            VerticalOptions="Center">
+                            <dxe:TextEdit 
+                            BoxPadding="18,16"
+                            BorderThickness="0.9"
+                            ClearIconVisibility="Never"
+                            CornerRadius="0"
+                            DisabledBorderThickness="0.9"
+                            ErrorText=" "
+                            FocusedBorderThickness="0.9"
+                            HelpText=" "
+                            IsErrorIconVisible="False"
+                            LabelFontSize="17"
+                            LabelText="匚匚"
+                            Margin="0,-11,0,-16"
+                            TextFontSize="17" />
+
+                            <dxe:TextEdit 
+                            BoxPadding="18,16"
+                            BorderThickness="0.9"
+                            ClearIconVisibility="Never"
+                            CornerRadius="0"
+                            DisabledBorderThickness="0.9"
+                            ErrorText=" "
+                            FocusedBorderThickness="0.9"
+                            HelpText=" "
+                            IsErrorIconVisible="False"
+                            LabelFontSize="17"
+                            LabelText="匚匚"
+                            Margin="0,-11,0,-16"
+                            TextFontSize="17" />
+
+                            <dxe:TextEdit 
+                            BoxPadding="18,16"
+                            BorderThickness="0.9"
+                            ClearIconVisibility="Never"
+                            CornerRadius="0"
+                            DisabledBorderThickness="0.9"
+                            ErrorText=" "
+                            FocusedBorderThickness="0.9"
+                            HelpText=" "
+                            IsErrorIconVisible="False"
+                            LabelFontSize="17"
+                            LabelText="匚匚"
+                            Margin="0,-11,0,-16"
+                            TextFontSize="17" />
+
+                            <dxe:TextEdit 
+                            BoxPadding="18,16"
+                            BorderThickness="0.9"
+                            ClearIconVisibility="Never"
+                            CornerRadius="0"
+                            DisabledBorderThickness="0.9"
+                            ErrorText=" "
+                            FocusedBorderThickness="0.9"
+                            HelpText=" "
+                            IsErrorIconVisible="False"
+                            LabelFontSize="17"
+                            LabelText="匚匚"
+                            Margin="0,-11,0,-16"
+                                IsReadOnly="True"
+                            TextFontSize="17" />
+
+                            <dxe:TextEdit 
+                            BoxPadding="18,16"
+                            BorderThickness="0.9"
+                            ClearIconVisibility="Never"
+                            CornerRadius="0"
+                            DisabledBorderThickness="0.9"
+                            ErrorText=" "
+                            FocusedBorderThickness="0.9"
+                            HelpText=" "
+                            IsErrorIconVisible="False"
+                            LabelFontSize="17"
+                            LabelText="匚匚"
+                            Margin="0,-11,0,-16"
+                            TextFontSize="17" />
+
+                            <Button 
+                            x:Name="ButtonUpdateCancel"
+                            Clicked="ButtonUpdateCancel_Clicked"
+                            CornerRadius="0"
+                            FontSize="17"
+                            HeightRequest="56"
+                            Text="CANCEL" />
+                        </VerticalStackLayout>
+                    </ScrollView>
+
+                    
+                </dxc:DXPopup>
 
             </VerticalStackLayout>
         </ScrollView>

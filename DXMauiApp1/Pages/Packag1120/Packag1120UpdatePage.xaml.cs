@@ -109,6 +109,11 @@ public partial class Packag1120UpdatePage : ContentPage
         NumericEditVolume.Value = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P));
     }
 
+    private void SwipeItemUpdate_Tap(object sender, SwipeItemTapEventArgs e)
+    {
+        DXPopupUpdate.IsOpen = true;
+    }
+
     private void SwipeItemDelete_Tap(object sender, SwipeItemTapEventArgs e)
     {
         SizeLs.RemoveAt(e.RowHandle);
@@ -157,5 +162,10 @@ public partial class Packag1120UpdatePage : ContentPage
 
         DataGridViewSizeLs.ItemsSource = new ObservableCollection<SizeModel>(SizeLs);
         LabelTotalVolume.Text = SizeLs.Sum(x => Math.Ceiling(x.L * x.W * x.H * x.P / 1000000m * 10000m) / 10000m) + " M³";
+    }
+
+    private void ButtonUpdateCancel_Clicked(object sender, EventArgs e)
+    {
+        DXPopupUpdate.IsOpen = false;
     }
 }
