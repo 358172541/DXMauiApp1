@@ -107,8 +107,6 @@ namespace DXMauiApp1
             }
             else
             {
-                var a = await httpResponseMessage.Content.ReadAsStringAsync();
-
                 item2 = JsonSerializer.Deserialize<TItem2>(
                     await httpResponseMessage.Content.ReadAsStringAsync(), 
                     JsonSerializerOptions);
