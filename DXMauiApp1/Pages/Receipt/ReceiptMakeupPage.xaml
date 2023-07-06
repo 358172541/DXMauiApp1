@@ -47,8 +47,6 @@
                 <Button 
                         x:Name="ButtonSearch"
                         Clicked="ButtonSearch_Clicked"
-                        CornerRadius="0"
-                        FontSize="17"
                         Grid.Column="1"
                         Grid.Row="0"
                         HeightRequest="56"
@@ -156,8 +154,6 @@
             <Button 
                 x:Name="ButtonSubmit"
                 Clicked="ButtonSubmit_Clicked"
-                CornerRadius="0"
-                FontSize="17"
                 HeightRequest="56"
                 Text="立即提交" />
 

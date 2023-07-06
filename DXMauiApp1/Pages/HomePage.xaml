@@ -92,8 +92,6 @@
                     <Button 
                         x:Name="ButtonCreate"
                         Clicked="ButtonCreate_Clicked"
-                        CornerRadius="0"
-                        FontSize="17"
                         Grid.Column="2"
                         Grid.Row="0"
                         HeightRequest="56"
@@ -161,8 +159,6 @@
 
                 <Button 
                     x:Name="ButtonLogin"
-                    CornerRadius="0"
-                    FontSize="17"
                     HeightRequest="56"
                     Text="匚匚匚匚" />
 

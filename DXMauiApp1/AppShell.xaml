@@ -3,7 +3,9 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:pages="clr-namespace:DXMauiApp1.Pages"
        x:Class= "DXMauiApp1.AppShell"
-       Style="{StaticResource ShellStyle}">
+       Shell.BackgroundColor="Black"
+       Shell.TabBarBackgroundColor ="WhiteSmoke"
+       Shell.TabBarTitleColor="Black">
     
     <ShellContent
             ContentTemplate="{DataTemplate pages:LoginPage}"
@@ -29,5 +31,11 @@
             Icon="xamarin"
             Route="VoyagePage"
             Title="船次检测" />
+
+        <ShellContent
+            ContentTemplate="{DataTemplate pages:ContactPage}"
+            Icon="xamarin"
+            Route="ContactPage"
+            Title="ContactPage" />
     </TabBar>
 </Shell>
