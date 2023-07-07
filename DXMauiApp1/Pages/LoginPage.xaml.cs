@@ -1,5 +1,6 @@
 using DXMauiApp1.Models;
 using DXMauiApp1.Services;
+using System;
 
 namespace DXMauiApp1.Pages
 {
@@ -47,7 +48,7 @@ namespace DXMauiApp1.Pages
 
                     if (tuple.Item2 != null)
                     {
-                        await DisplayAlert("ьньньньн", tuple.Item2.Text + "║╦" + tuple.Item2.Code + "║╧", "ьньн");
+                        await DisplayAlert("║╦" + tuple.Item2.Code + "║╧", tuple.Item2.Text, "ьньн");
                         return;
                     }
 
@@ -57,7 +58,7 @@ namespace DXMauiApp1.Pages
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("ьньньньн", ex.Message, "ьньн");
+                    await DisplayAlert("║╦║╧", ex.Message, "ьньн");
                 }
             }
         }
