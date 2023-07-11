@@ -16,3 +16,17 @@ keytool -genkey -v -keystore publish.keystore -alias PublishKeyStore -keyalg RSA
 <uses-permission android:name="android.permission.INTERNET" />
 
 dotnet publish -c Release -f:net7.0-android
+
+========================================================================
+
+https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+Forground - Text
+Font - Xanh Mono
+Padding - 50%
+Color - White
+Background color - Black
+Scaling - Center
+Shape(Legacy) - Circle
+Effect - Elevate
+1024.png
+https://www.photopea.com/
