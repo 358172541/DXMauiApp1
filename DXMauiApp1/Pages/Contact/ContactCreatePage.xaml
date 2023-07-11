@@ -44,16 +44,12 @@
             <Button 
                 x:Name="ButtonSubmit"
                 Clicked="ButtonSubmit_Clicked"
-                CornerRadius="0"
-                FontSize="17"
                 HeightRequest="56"
                 Text="匚匚匚匚" />
 
             <Button 
                 x:Name="ButtonCancel"
                 Clicked="ButtonCancel_Clicked"
-                CornerRadius="0"
-                FontSize="17"
                 HeightRequest="56"
                 Text="匚匚" />
 

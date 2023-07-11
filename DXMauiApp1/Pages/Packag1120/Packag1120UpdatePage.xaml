@@ -49,8 +49,6 @@
                     <Button 
                         x:Name="ButtonSearch"
                         Clicked="ButtonSearch_Clicked"
-                        CornerRadius="0"
-                        FontSize="17"
                         Grid.Column="1"
                         Grid.Row="0"
                         HeightRequest="56"
@@ -145,8 +143,6 @@
                     <Button 
                         x:Name="ButtonSizeLsCreate"
                         Clicked="ButtonSizeLsCreate_Clicked"
-                        CornerRadius="0"
-                        FontSize="17"
                         Grid.Column="2"
                         Grid.Row="0"
                         HeightRequest="56"
@@ -203,7 +199,7 @@
                             <dxg:DataGridView.EndSwipeItems>
                                 <dxg:SwipeItem 
                                     x:Name="SwipeItemSizeLsUpdate"
-                                    BackgroundColor="Navy"
+                                    BackgroundColor="Black"
                                     Caption="编辑" 
                                     Tap="SwipeItemSizeLsUpdate_Tap"
                                     Width="75" />
@@ -221,8 +217,6 @@
                 <Button 
                     x:Name="ButtonSubmit"
                     Clicked="ButtonSubmit_Clicked"
-                    CornerRadius="0"
-                    FontSize="17"
                     HeightRequest="56"
                     Text="立即提交" />
 
@@ -356,8 +350,6 @@
                                 <Button 
                                     x:Name="ButtonSizeLsCreateUpdateSubmit"
                                     Clicked="ButtonSizeLsCreateUpdateSubmit_Clicked"
-                                    CornerRadius="0"
-                                    FontSize="17"
                                     Grid.Column="0"
                                     Grid.Row="0"
                                     HeightRequest="56"
@@ -366,8 +358,6 @@
                                 <Button 
                                     x:Name="ButtonSizeLsCreateUpdateCancel"
                                     Clicked="ButtonSizeLsCreateUpdateCancel_Clicked"
-                                    CornerRadius="0"
-                                    FontSize="17"
                                     Grid.Column="1"
                                     Grid.Row="0"
                                     HeightRequest="56"

@@ -29,7 +29,7 @@
                 HelpText=" "
                 IsErrorIconVisible="False"
                 LabelFontSize="17"
-                LabelText="匚匚匚匚"
+                LabelText="账号"
                 Margin="0,-11,0,-16"
                 TextChanged="TextEditAccount_TextChanged"
                 TextFontSize="17" />
@@ -45,7 +45,7 @@
                 HelpText=" "
                 IsErrorIconVisible="False"
                 LabelFontSize="17"
-                LabelText="匚匚匚匚"
+                LabelText="密码"
                 Margin="0,-11,0,-16"
                 TextChanged="PasswordEditPassword_TextChanged"
                 TextFontSize="17" />
@@ -53,10 +53,8 @@
             <Button 
                 x:Name="ButtonLogin"
                 Clicked="ButtonLogin_Clicked"
-                CornerRadius="0"
-                FontSize="17"
                 HeightRequest="56"
-                Text="匚匚匚匚" />
+                Text="立即登录" />
 
         </VerticalStackLayout>
 

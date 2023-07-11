@@ -42,7 +42,7 @@ namespace DXMauiApp1.Pages
 
                 if (tuple.Item2 != null)
                 {
-                    await DisplayAlert("匚匚匚匚", tuple.Item2.Text + "「" + tuple.Item2.Code + "」", "匚匚");
+                    await DisplayAlert("「" + tuple.Item2.Code + "」", tuple.Item2.Text, "匚匚");
                     return;
                 }
 

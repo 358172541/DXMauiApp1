@@ -1,6 +1,5 @@
 using DXMauiApp1.Models;
 using DXMauiApp1.Services;
-using System.Collections.ObjectModel;
 
 namespace DXMauiApp1.Pages;
 
@@ -37,7 +36,7 @@ public partial class ReceiptMakeupPage : ContentPage
 
             if (tuple.Item2 != null)
             {
-                await DisplayAlert("ьньньньн", tuple.Item2.Text + "║╦" + tuple.Item2.Code + "║╧", "ьньн");
+                await DisplayAlert("║╦" + tuple.Item2.Code + "║╧", tuple.Item2.Text, "ьньн");
                 return; // todo
             }
 
@@ -109,7 +108,7 @@ public partial class ReceiptMakeupPage : ContentPage
 
     private async void ButtonSubmit_Clicked(object sender, EventArgs e)
     {
-        if (Common.TextEditBaseRequired(TextEditMemberNumber) &&
+        if (Common.TextEditBaseRequired(TextEditWaybillNumber) &&
             Common.NumericEditRequired(NumericEditLength) &&
             Common.NumericEditRequired(NumericEditWidth) &&
             Common.NumericEditRequired(NumericEditHeight) &&
@@ -120,7 +119,7 @@ public partial class ReceiptMakeupPage : ContentPage
                 new ReceiptMakeupModel
                 {
                     Id = PrimaryKey,
-                    WaybillNumber = TextEditMemberNumber.Text,
+                    WaybillNumber = TextEditWaybillNumber.Text,
                     Length = NumericEditLength.Value,
                     Width = NumericEditWidth.Value,
                     Height = NumericEditHeight.Value,
@@ -130,7 +129,7 @@ public partial class ReceiptMakeupPage : ContentPage
 
             if (tuple.Item2 != null)
             {
-                await DisplayAlert("ьньньньн", tuple.Item2.Text + "║╦" + tuple.Item2.Code + "║╧", "ьньн");
+                await DisplayAlert("║╦" + tuple.Item2.Code + "║╧", tuple.Item2.Text, "ьньн");
                 return;
             }
 

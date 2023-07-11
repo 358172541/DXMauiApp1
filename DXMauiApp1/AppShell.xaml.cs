@@ -12,7 +12,6 @@ namespace DXMauiApp1
             Routing.RegisterRoute(nameof(ContactPage), typeof(ContactPage));
             Routing.RegisterRoute(nameof(ContactUpdatePage), typeof(ContactUpdatePage));
             Routing.RegisterRoute(nameof(EmptyPage), typeof(EmptyPage));
-            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
 
             Routing.RegisterRoute(nameof(Packag1120UpdatePage), typeof(Packag1120UpdatePage));
             Routing.RegisterRoute(nameof(ReceiptMakeupPage), typeof(ReceiptMakeupPage));
