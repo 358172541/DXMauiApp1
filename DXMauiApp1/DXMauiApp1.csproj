@@ -24,9 +24,9 @@
 
 	<ItemGroup>
 		<MauiFont Include="Resources\Fonts\*" />
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="Navy" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" />
 		<MauiImage Include="Resources\Images\*" />
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="Navy" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" BaseSize="128,128" Color="White" />
 	</ItemGroup>
 
 	<ItemGroup>

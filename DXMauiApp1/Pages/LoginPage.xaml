@@ -12,11 +12,6 @@
             Spacing="24"
             VerticalOptions="Center">
 
-            <Image
-                HeightRequest="160"
-                HorizontalOptions="Center" 
-                Source="xamarin.svg" />
-
             <dxe:TextEdit 
                 x:Name="TextEditAccount"
                 BoxPadding="18,16"
