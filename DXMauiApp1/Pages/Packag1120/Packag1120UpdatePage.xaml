@@ -199,7 +199,7 @@
                             <dxg:DataGridView.EndSwipeItems>
                                 <dxg:SwipeItem 
                                     x:Name="SwipeItemSizeLsUpdate"
-                                    BackgroundColor="Black"
+                                    BackgroundColor="Navy"
                                     Caption="编辑" 
                                     Tap="SwipeItemSizeLsUpdate_Tap"
                                     Width="75" />
@@ -353,7 +353,7 @@
                                     Grid.Column="0"
                                     Grid.Row="0"
                                     HeightRequest="56"
-                                    Text="保存" />
+                                    Text="提交" />
 
                                 <Button 
                                     x:Name="ButtonSizeLsCreateUpdateCancel"

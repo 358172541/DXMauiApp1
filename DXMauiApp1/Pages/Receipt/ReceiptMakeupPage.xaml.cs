@@ -10,8 +10,6 @@ public partial class ReceiptMakeupPage : ContentPage
         InitializeComponent();
     }
 
-    public long PrimaryKey { get; set; }
-
     protected override void OnAppearing()
     {
         base.OnAppearing();
@@ -21,6 +19,7 @@ public partial class ReceiptMakeupPage : ContentPage
         Common.NumericEditRequired(NumericEditWidth);
         Common.NumericEditRequired(NumericEditHeight);
         Common.NumericEditRequired(NumericEditWeight);
+        Common.TextEditBaseRequired(TextEditMemberMark);
         Common.TextEditBaseRequired(TextEditMemberNumber);
     }
 
@@ -40,8 +39,6 @@ public partial class ReceiptMakeupPage : ContentPage
                 return; // todo
             }
 
-            PrimaryKey = tuple.Item1.Id; // required
-
             NumericEditLength.Value = tuple.Item1.Length;
             NumericEditWidth.Value = tuple.Item1.Width;
             NumericEditHeight.Value = tuple.Item1.Height;
@@ -52,6 +49,7 @@ public partial class ReceiptMakeupPage : ContentPage
             Common.NumericEditRequired(NumericEditWidth);
             Common.NumericEditRequired(NumericEditHeight);
             Common.NumericEditRequired(NumericEditWeight);
+            Common.TextEditBaseRequired(TextEditMemberMark);
             Common.TextEditBaseRequired(TextEditMemberNumber);
 
             return;
@@ -90,6 +88,11 @@ public partial class ReceiptMakeupPage : ContentPage
         Common.NumericEditRequired(NumericEditWeight);
     }
 
+    private void TextEditMemberMark_TextChanged(object sender, EventArgs e)
+    {
+        Common.TextEditBaseRequired(TextEditMemberMark);
+    }
+
     private void TextEditMemberNumber_TextChanged(object sender, EventArgs e)
     {
         Common.TextEditBaseRequired(TextEditMemberNumber);
@@ -97,12 +100,12 @@ public partial class ReceiptMakeupPage : ContentPage
 
     private void Clear()
     {
-        PrimaryKey = default;
         TextEditWaybillNumber.Text = string.Empty;
         NumericEditLength.Value = null;
         NumericEditWidth.Value = null;
         NumericEditHeight.Value = null;
         NumericEditWeight.Value = null;
+        TextEditMemberMark.Text = string.Empty;
         TextEditMemberNumber.Text = string.Empty;
     }
 
@@ -113,17 +116,18 @@ public partial class ReceiptMakeupPage : ContentPage
             Common.NumericEditRequired(NumericEditWidth) &&
             Common.NumericEditRequired(NumericEditHeight) &&
             Common.NumericEditRequired(NumericEditWeight) &&
+            Common.TextEditBaseRequired(TextEditMemberMark) &&
             Common.TextEditBaseRequired(TextEditMemberNumber))
         {
             var tuple = await ReceiptService.MakeupAsync(
                 new ReceiptMakeupModel
                 {
-                    Id = PrimaryKey,
                     WaybillNumber = TextEditWaybillNumber.Text,
                     Length = NumericEditLength.Value,
                     Width = NumericEditWidth.Value,
                     Height = NumericEditHeight.Value,
                     Weight = NumericEditWeight.Value,
+                    MemberMark = TextEditMemberMark.Text,
                     MemberNumber = TextEditMemberNumber.Text
                 });
 

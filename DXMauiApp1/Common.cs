@@ -21,7 +21,7 @@ namespace DXMauiApp1
 
         public static bool TextEditBaseRequired( // MultilineEdit、PasswordEdit、TextEdit
             TextEditBase textEditBase,
-            string errorText = "必填项不能为空")
+            string errorText = " ")
         {
             if (string.IsNullOrWhiteSpace(textEditBase.Text))
             {
@@ -39,7 +39,7 @@ namespace DXMauiApp1
 
         public static bool NumericEditRequired( // NumericEdit
             NumericEdit numericEdit,
-            string errorText = "必填项不能为空")
+            string errorText = " ")
         {
             if (numericEdit.Value == null)
             {

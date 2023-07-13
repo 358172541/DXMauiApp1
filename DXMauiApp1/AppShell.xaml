@@ -3,9 +3,9 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:pages="clr-namespace:DXMauiApp1.Pages"
        x:Class= "DXMauiApp1.AppShell"
-       Shell.BackgroundColor="Black"
+       Shell.BackgroundColor="Navy"
        Shell.TabBarBackgroundColor ="WhiteSmoke"
-       Shell.TabBarTitleColor="Black">
+       Shell.TabBarTitleColor="Navy">
     
     <ShellContent
             ContentTemplate="{DataTemplate pages:LoginPage}"
