@@ -7,14 +7,10 @@
         <ResourceDictionary>
 
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="Navy" />
+                <Setter Property="BackgroundColor" Value="Black" />
                 <Setter Property="CornerRadius" Value="0" />
-                <Setter Property="FontSize" Value="17" />
+                <Setter Property="FontSize" Value="14" />
                 <Setter Property="TextColor" Value="White" />
-            </Style>
-            
-            <Style TargetType="Label">
-                <Setter Property="FontSize" Value="17" />
             </Style>
             
         </ResourceDictionary>
