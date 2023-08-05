@@ -3,213 +3,116 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="DXMauiApp1.Pages.ReceiptMakeupPage"
-             Title="快递签收">
-    <ContentPage.Content>
-        <ScrollView>
-            <VerticalStackLayout
-                Padding="24"
-                Spacing="24">
+             Title="匚匚匚匚">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="24">
 
-                <Grid
-                    BackgroundColor="WhiteSmoke"
-                    Margin="-24,-24,-24,0"
-                    Padding="24">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+            <Grid 
+                BackgroundColor="Silver"
+                Margin="-24,-24,-24,0"
+                Padding="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="56" />
-                    </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
 
-                    <dxe:TextEdit 
-                        x:Name="TextEditWaybillNumber"
-                        BackgroundColor="White"
-                        BoxPadding="18,16"
-                        BorderThickness="0.9"
-                        ClearIconClicked="TextEditWaybillNumber_ClearIconClicked"
-                        ClearIconVisibility="Auto"
-                        CornerRadius="0"
-                        DisabledBorderThickness="0.9"
-                        ErrorText=" "
-                        FocusedBorderThickness="0.9"
-                        Grid.Column="0"
-                        Grid.Row="0"
-                        HelpText=" "
-                        IsErrorIconVisible="False"
-                        LabelFontSize="17"
-                        LabelText="快递单号"
-                        Margin="0,-11,0,-16"
-                        TextChanged="TextEditWaybillNumber_TextChanged"
-                        TextFontSize="17" />
-
-                    <Button 
-                        x:Name="ButtonSearch"
-                        Clicked="ButtonSearch_Clicked"
-                        Grid.Column="1"
-                        Grid.Row="0"
-                        HeightRequest="56"
-                        Text="查询" 
-                        WidthRequest="75" />
-                </Grid>
-
-                <Grid
-                    ColumnSpacing="24">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="56" />
-                    </Grid.RowDefinitions>
-
-                    <dxe:NumericEdit 
-                        x:Name="NumericEditLength"
-                        AllowNullValue="True"
-                        BoxPadding="18,16"
-                        BorderThickness="0.9"
-                        ClearIconVisibility="Never"
-                        CornerRadius="0"
-                        DisabledBorderThickness="0.9"
-                        ErrorText=" "
-                        FocusedBorderThickness="0.9"
-                        Grid.Column="0"
-                        Grid.Row="0"
-                        HelpText=" "
-                        IsErrorIconVisible="False"
-                        LabelFontSize="17"
-                        LabelText="长 CM"
-                        Margin="0,-11,0,-16"
-                        MaxDecimalDigitCount="0"
-                        TextFontSize="17"
-                        TextHorizontalAlignment="Start"
-                        ValueChanged="NumericEditLength_ValueChanged" />
-
-                    <dxe:NumericEdit 
-                        x:Name="NumericEditWidth"
-                        AllowNullValue="True"
-                        BoxPadding="18,16"
-                        BorderThickness="0.9"
-                        ClearIconVisibility="Never"
-                        CornerRadius="0"
-                        DisabledBorderThickness="0.9"
-                        ErrorText=" "
-                        FocusedBorderThickness="0.9"
-                        Grid.Column="1"
-                        Grid.Row="0"
-                        HelpText=" "
-                        IsErrorIconVisible="False"
-                        LabelFontSize="17"
-                        LabelText="宽 CM"
-                        Margin="0,-11,0,-16"
-                        MaxDecimalDigitCount="0"
-                        TextFontSize="17"
-                        TextHorizontalAlignment="Start"
-                        ValueChanged="NumericEditWidth_ValueChanged" />
-
-                    <dxe:NumericEdit 
-                        x:Name="NumericEditHeight"
-                        AllowNullValue="True"
-                        BoxPadding="18,16"
-                        BorderThickness="0.9"
-                        ClearIconVisibility="Never"
-                        CornerRadius="0"
-                        DisabledBorderThickness="0.9"
-                        ErrorText=" "
-                        FocusedBorderThickness="0.9"
-                        Grid.Column="2"
-                        Grid.Row="0"
-                        HelpText=" "
-                        IsErrorIconVisible="False"
-                        LabelFontSize="17"
-                        LabelText="高 CM"
-                        Margin="0,-11,0,-16"
-                        MaxDecimalDigitCount="0"
-                        TextFontSize="17"
-                        TextHorizontalAlignment="Start"
-                        ValueChanged="NumericEditHeight_ValueChanged" />
-                </Grid>
-
-                <dxe:NumericEdit 
-                    x:Name="NumericEditWeight"
-                    AllowNullValue="True"
-                    BoxPadding="18,16"
-                    BorderThickness="0.9"
-                    ClearIconVisibility="Never"
-                    CornerRadius="0"
-                    DisabledBorderThickness="0.9"
-                    ErrorText=" "
-                    FocusedBorderThickness="0.9"
-                    HelpText=" "
-                    IsErrorIconVisible="False"
-                    LabelFontSize="17"
-                    LabelText="重量 KG"
-                    Margin="0,-11,0,-16"
-                    MaxDecimalDigitCount="2"
-                    TextFontSize="17"
-                    TextHorizontalAlignment="Start"
-                    ValueChanged="NumericEditWeight_ValueChanged" />
-
-                <Grid 
-                    ColumnSpacing="24">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="56" />
-                    </Grid.RowDefinitions>
-
-                    <dxe:TextEdit 
-                        x:Name="TextEditMemberMark"
-                        BoxPadding="18,16"
-                        BorderThickness="0.9"
-                        ClearIconVisibility="Never"
-                        CornerRadius="0"
-                        DisabledBorderThickness="0.9"
-                        ErrorText=" "
-                        FocusedBorderThickness="0.9"
-                        Grid.Column="0"
-                        Grid.Row="0"
-                        HelpText=" "
-                        IsErrorIconVisible="False"
-                        LabelFontSize="17"
-                        LabelText="会员标识"
-                        Margin="0,-11,0,-16"
-                        TextChanged="TextEditMemberMark_TextChanged"
-                        TextFontSize="17" />
-
-                    <dxe:TextEdit 
-                        x:Name="TextEditMemberNumber"
-                        BoxPadding="18,16"
-                        BorderThickness="0.9"
-                        ClearIconVisibility="Never"
-                        CornerRadius="0"
-                        DisabledBorderThickness="0.9"
-                        ErrorText=" "
-                        FocusedBorderThickness="0.9"
-                        Grid.Column="1"
-                        Grid.Row="0"
-                        HelpText=" "
-                        IsErrorIconVisible="False"
-                        LabelFontSize="17"
-                        LabelText="会员代号"
-                        Margin="0,-11,0,-16"
-                        TextChanged="TextEditMemberNumber_TextChanged"
-                        TextFontSize="17" />
-                </Grid>
+                <dxe:TextEdit 
+                    x:Name="TextEditWaybillNumber"
+                    BackgroundColor="White"
+                    ClearIconClicked="TextEditWaybillNumber_ClearIconClicked"
+                    ClearIconVisibility="Auto"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    LabelText="匚匚匚匚"
+                    TextChanged="TextEditWaybillNumber_TextChanged" />
 
                 <Button 
-                    x:Name="ButtonSubmit"
-                    Clicked="ButtonSubmit_Clicked"
-                    HeightRequest="56"
-                    Text="立即提交" />
+                    x:Name="ButtonSearch"
+                    Clicked="ButtonSearch_Clicked"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text=">>"
+                    WidthRequest="88" />
+            </Grid>
 
-            </VerticalStackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+            <Grid
+                ColumnSpacing="24"
+                RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+                <dxe:NumericEdit 
+                    x:Name="NumericEditLength"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    LabelText="匚 CM"
+                    ValueChanged="NumericEditLength_ValueChanged" />
+
+                <dxe:NumericEdit 
+                    x:Name="NumericEditWidth"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    LabelText="匚 CM"
+                    ValueChanged="NumericEditWidth_ValueChanged" />
+
+                <dxe:NumericEdit 
+                    x:Name="NumericEditHeight"
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    LabelText="匚 CM"
+                    ValueChanged="NumericEditHeight_ValueChanged" />
+            </Grid>
+
+            <dxe:NumericEdit 
+                x:Name="NumericEditWeight"
+                LabelText="匚匚 KG"
+                MaxDecimalDigitCount="2"
+                ValueChanged="NumericEditWeight_ValueChanged" />
+
+            <Grid 
+                ColumnSpacing="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+                <dxe:TextEdit 
+                    x:Name="TextEditMemberMark"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    LabelText="匚匚匚匚"
+                    TextChanged="TextEditMemberMark_TextChanged" />
+
+                <dxe:TextEdit 
+                    x:Name="TextEditMemberNumber"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    LabelText="匚匚匚匚"
+                    TextChanged="TextEditMemberNumber_TextChanged" />
+            </Grid>
+
+            <Button 
+                x:Name="ButtonSubmit"
+                Clicked="ButtonSubmit_Clicked"
+                Text=">>" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

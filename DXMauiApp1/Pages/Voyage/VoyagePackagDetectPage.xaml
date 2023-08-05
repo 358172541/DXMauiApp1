@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DXMauiApp1.Pages.VoyagePackagDetectPage"
              Title="VoyagePackagDetectPage">
-    <ContentPage.Content>
-        <Label
-            Text=" " />
-    </ContentPage.Content>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="24">
+
+            <Label Text="Not Implemented" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

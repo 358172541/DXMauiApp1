@@ -4,9 +4,7 @@
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="DXMauiApp1.Pages.LoginPage"
              Shell.NavBarIsVisible="False">
-
-    <ContentPage.Content>
-
+    <ScrollView>
         <VerticalStackLayout
             Padding="24"
             Spacing="24"
@@ -14,47 +12,19 @@
 
             <dxe:TextEdit 
                 x:Name="TextEditAccount"
-                BorderThickness="0.9"
-                BoxMinHeight="38"
-                BoxPadding="16,0"
-                ClearIconVisibility="Never"
-                CornerRadius="0"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelText="HHH"
-                Margin="0,-8,0,-16"
-                TextChanged="TextEditAccount_TextChanged"
-                TextFontSize="16" />
+                LabelText="匚匚"
+                TextChanged="TextEditAccount_TextChanged" />
 
             <dxe:PasswordEdit 
                 x:Name="PasswordEditPassword"
-                BorderThickness="0.9"
-                BoxMinHeight="38"
-                BoxPadding="16,0"
-                ClearIconVisibility="Never"
-                CornerRadius="0"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelText="HHH"
-                Margin="0,-8,0,-16"
-                PasswordIconVisibility="Never"
-                TextChanged="PasswordEditPassword_TextChanged"
-                 TextFontSize="16" />
+                LabelText="匚匚"
+                TextChanged="PasswordEditPassword_TextChanged" />
 
             <Button 
                 x:Name="ButtonLogin"
                 Clicked="ButtonLogin_Clicked"
-                FontSize="16"
-                HeightRequest="38"
-                Text=">>" />
+                Text="匚匚匚匚" />
 
         </VerticalStackLayout>
-
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

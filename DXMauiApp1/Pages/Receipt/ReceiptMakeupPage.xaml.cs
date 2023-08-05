@@ -14,6 +14,8 @@ public partial class ReceiptMakeupPage : ContentPage
     {
         base.OnAppearing();
 
+        TextEditWaybillNumber.Text = "111111111";
+
         Common.TextEditBaseRequired(TextEditWaybillNumber);
         Common.NumericEditRequired(NumericEditLength);
         Common.NumericEditRequired(NumericEditWidth);
@@ -43,6 +45,7 @@ public partial class ReceiptMakeupPage : ContentPage
             NumericEditWidth.Value = tuple.Item1.Width;
             NumericEditHeight.Value = tuple.Item1.Height;
             NumericEditWeight.Value = tuple.Item1.Weight;
+            TextEditMemberMark.Text = tuple.Item1.MemberMark;
             TextEditMemberNumber.Text = tuple.Item1.MemberNumber;
 
             Common.NumericEditRequired(NumericEditLength);

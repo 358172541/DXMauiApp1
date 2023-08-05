@@ -5,51 +5,28 @@
              x:Class= "DXMauiApp1.Pages.ContactUpdatePage"
              Title="ContactUpdatePage">
     <ContentPage.Content>
-        <VerticalStackLayout Margin="24"
-                         Spacing="24">
+        <VerticalStackLayout 
+            Padding="24"
+            Spacing="24">
 
             <dxe:TextEdit 
                 x:Name="TextEditName"
-                BoxPadding="18,16"
-                BorderThickness="0.9"
-                CornerRadius="0"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelFontSize="17"
                 LabelText="匚匚匚匚"
-                Margin="0,-11,0,-16"
-                TextChanged="TextEditName_TextChanged"
-                TextFontSize="17" />
+                TextChanged="TextEditName_TextChanged" />
 
             <dxe:TextEdit 
                 x:Name="TextEditNumber"
-                BoxPadding="18,16"
-                BorderThickness="0.9"
-                CornerRadius="0"
-                DisabledBorderThickness="0.9"
-                ErrorText=" "
-                FocusedBorderThickness="0.9"
-                HelpText=" "
-                IsErrorIconVisible="False"
-                LabelFontSize="17"
                 LabelText="匚匚匚匚"
-                Margin="0,-11,0,-16"
-                TextChanged="TextEditNumber_TextChanged"
-                TextFontSize="17" />
+                TextChanged="TextEditNumber_TextChanged" />
             
             <Button 
                 x:Name="ButtonSubmit"
                 Clicked="ButtonSubmit_Clicked"
-                HeightRequest="56"
-                Text="匚匚匚匚" />
+                Text=">>" />
 
             <Button 
                 x:Name="ButtonCancel"
                 Clicked="ButtonCancel_Clicked"
-                HeightRequest="56"
                 Text="匚匚" />
             
         </VerticalStackLayout>

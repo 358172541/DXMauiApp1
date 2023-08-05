@@ -3,7 +3,6 @@ using DXMauiApp1.Models;
 using DXMauiApp1.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text.Json;
 
 namespace DXMauiApp1.Pages;
 
@@ -24,7 +23,7 @@ public partial class Packag1120UpdatePage : ContentPage
     {
         base.OnAppearing();
 
-        TextEditWaybillNumber.Text = "M202305160919476";
+        TextEditWaybillNumber.Text = "M202306191756417";
 
         Common.TextEditBaseRequired(TextEditWaybillNumber);
         Common.TextEditBaseRequired(TextEditLocation);
@@ -36,7 +35,7 @@ public partial class Packag1120UpdatePage : ContentPage
     {
         if (!string.IsNullOrWhiteSpace(TextEditWaybillNumber.Text))
         {
-            var tuple = await Packag1120Service.UpdateSearchAsync(
+            var tuple = await Packag1120Service.SingleSearchAsync(
                 new Packag1120UpdateSearchModel
                 {
                     WaybillNumber = TextEditWaybillNumber.Text
@@ -58,7 +57,7 @@ public partial class Packag1120UpdatePage : ContentPage
             Common.TextEditBaseRequired(MultilineEditCargoDescription);
             Common.NumericEditRequired(NumericEditVolume);
 
-            SizeLs = JsonSerializer.Deserialize<List<SizeModel>>(tuple.Item1.SizeLs, Common.JsonSerializerOptions);
+            SizeLs = tuple.Item1.SizeLs; // SizeLs = JsonSerializer.Deserialize<List<SizeModel>>(tuple.Item1.SizeLs, Common.JsonSerializerOptions);
 
             DataGridViewSizeLs.ItemsSource = new ObservableCollection<SizeModel>(SizeLs);
             LabelTotalVolume.Text = SizeLs.Sum(x => Common.Volume(x.L, x.W, x.H, x.P)) + " M³";
@@ -207,8 +206,9 @@ public partial class Packag1120UpdatePage : ContentPage
                     Id = PrimaryKey,
                     CargoDescription = MultilineEditCargoDescription.Text,
                     Location = TextEditLocation.Text,
-                    SizeLs = JsonSerializer.Serialize(SizeLs, Common.JsonSerializerOptions),
-                    Volume = NumericEditVolume.Value
+                    SizeLs = SizeLs, // SizeLs = JsonSerializer.Serialize(SizeLs, Common.JsonSerializerOptions),
+                    Volume = NumericEditVolume.Value,
+                    WaybillNumber = TextEditWaybillNumber.Text
                 });
 
             if (tuple.Item2 != null)

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DXMauiApp1.Models
+﻿namespace DXMauiApp1.Models
 {
     public class ReceiptMakeupModel
     {

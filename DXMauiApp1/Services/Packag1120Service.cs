@@ -23,11 +23,11 @@ namespace DXMauiApp1.Services
             return httpClient;
         }
 
-        public static async Task<Tuple<Packag1120UpdateModel, ErrorModel>> UpdateSearchAsync(Packag1120UpdateSearchModel searchModel)
+        public static async Task<Tuple<Packag1120UpdateModel, ErrorModel>> SingleSearchAsync(Packag1120UpdateSearchModel searchModel)
         {
             var httpClient = CreateHttpClient();
 
-            var httpResponseMessage = await httpClient.GetAsync("api/mac/packag1120?" + Common.QueryStringify(searchModel));
+            var httpResponseMessage = await httpClient.GetAsync("api/mac/packag1120/single?" + Common.QueryStringify(searchModel));
 
             return await Common.HttpResponseMessageHandleAsync<Packag1120UpdateModel, ErrorModel>(httpResponseMessage);
         }
@@ -40,7 +40,7 @@ namespace DXMauiApp1.Services
 
             var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-            var httpResponseMessage = await httpClient.PostAsync("api/mac/packag1120/"+ updateModel.Id, httpContent);
+            var httpResponseMessage = await httpClient.PutAsync("api/mac/packag1120/"+ updateModel.Id, httpContent);
 
             return await Common.HttpResponseMessageHandleAsync<EmptyModel, ErrorModel>(httpResponseMessage);
         }

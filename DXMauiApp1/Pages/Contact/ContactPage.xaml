@@ -57,7 +57,6 @@
                     Grid.Row="0"
                     Text=" M³" />
 
-
                 <Label
                     Grid.Column="0"
                     Grid.Row="1"
@@ -129,18 +128,18 @@
                     Grid.Row="0"
                     Grid.RowSpan="3"
                     HorizontalOptions="End"
-                    Padding="13,0"
-                    Text="匚匚"></Button>
+                    Text=">>"
+                    WidthRequest="88"></Button>
             </Grid>
 
             <dxcv:DXCollectionView
-                    x:Name="DXCollectionViewContact"
-                    SelectionMode="Single"
-                    Tap="DXCollectionViewContact_Tap">
+                x:Name="DXCollectionViewContact"
+                SelectionMode="Single"
+                Tap="DXCollectionViewContact_Tap">
                 <dxcv:DXCollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid 
-                                Padding="24,8">
+                            Padding="24,8">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="Auto" />
@@ -152,22 +151,22 @@
                             </Grid.RowDefinitions>
 
                             <Label  
-                                    Grid.Column="0"
-                                    Grid.Row="0" 
-                                    Text="{Binding Name}" />
+                                Grid.Column="0"
+                                Grid.Row="0" 
+                                Text="{Binding Name}" />
 
                             <Label 
-                                    Grid.Column="0" 
-                                    Grid.Row="1" 
-                                    Text="{Binding Number}" />
+                                Grid.Column="0" 
+                                Grid.Row="1" 
+                                Text="{Binding Number}" />
 
                             <Label 
-                                    Grid.Row="0" 
-                                    Grid.RowSpan="2"
-                                    Grid.Column="1" 
-                                    HorizontalTextAlignment="Center"
-                                    Text=">" 
-                                    VerticalTextAlignment="Center" />
+                                Grid.Row="0" 
+                                Grid.RowSpan="2"
+                                Grid.Column="1" 
+                                HorizontalTextAlignment="Center"
+                                Text=">" 
+                                VerticalTextAlignment="Center" />
                         </Grid>
                     </DataTemplate>
                 </dxcv:DXCollectionView.ItemTemplate>
