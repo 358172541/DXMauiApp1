@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net7.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = DXMauiApp1
+build_property.ProjectDir = C:\Users\admin\Desktop\DXMauiApp1\DXMauiApp1\
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactCreatePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Contact.ContactCreatePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Contact\ContactCreatePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Contact\ContactCreatePage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Contact.ContactPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Contact\ContactPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Contact\ContactPage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Contact/ContactUpdatePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Contact.ContactUpdatePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Contact\ContactUpdatePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Contact\ContactUpdatePage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/EmptyPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.EmptyPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\EmptyPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\EmptyPage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Packag1120/Packag1120UpdatePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Packag1120.Packag1120UpdatePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Packag1120\Packag1120UpdatePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Packag1120\Packag1120UpdatePage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Receipt/ReceiptMakeupPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Receipt.ReceiptMakeupPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Receipt\ReceiptMakeupPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Receipt\ReceiptMakeupPage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Voyage/VoyagePackagDetectPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Voyage.VoyagePackagDetectPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Voyage\VoyagePackagDetectPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Voyage\VoyagePackagDetectPage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Voyage/VoyagePackagPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Voyage.VoyagePackagPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Voyage\VoyagePackagPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Voyage\VoyagePackagPage.xaml
+
+[C:/Users/admin/Desktop/DXMauiApp1/DXMauiApp1/Pages/Voyage/VoyagePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DXMauiApp1.Pages.Voyage.VoyagePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Voyage\VoyagePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Voyage\VoyagePage.xaml
